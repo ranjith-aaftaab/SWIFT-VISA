@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swift Visa – Free Study Abroad | Zero Consulting Fee</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Free study abroad consultancy for Indian students. Expert visa &amp; scholarship support for USA, UK, Canada &amp; Australia — 10,000+ students placed at zero cost. Book your free counselling today." />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://demo-swift.netlify.app/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://demo-swift.netlify.app/" />
+  <meta property="og:title" content="Swift Visa – Free Study Abroad | Zero Consulting Fee" />
+  <meta property="og:description" content="Free study abroad consultancy for Indian students. Expert visa &amp; scholarship support for USA, UK, Canada &amp; Australia. 10,000+ students placed at zero cost. Book free counselling." />
+  <meta property="og:image" content="https://demo-swift.netlify.app/images/hero.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Swift Visa – Study Abroad Consultancy" />
+  <meta property="og:site_name" content="Swift Visa" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@swiftvisa" />
+  <meta name="twitter:title" content="Swift Visa – Free Study Abroad | Zero Consulting Fee" />
+  <meta name="twitter:description" content="Free study abroad consultancy for Indian students. Expert visa &amp; scholarship support for USA, UK, Canada &amp; Australia. 10,000+ students at zero cost." />
+  <meta name="twitter:image" content="https://demo-swift.netlify.app/images/hero.png" />
+  <meta name="twitter:image:alt" content="Swift Visa – Study Abroad Consultancy" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+
+  <!-- Performance: Font Preconnects -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Premium Heading Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" />
+  <style>
+    /* ===== SWIFT VISA CUSTOM OVERRIDES ===== */
+
+    /* NAV ENHANCEMENTS */
+    .sv-nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #4A6CF7, #7B3FE4);
+      color: #fff !important;
+      padding: 9px 22px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.25s;
+      box-shadow: 0 4px 15px rgba(74, 108, 247, 0.4);
+    }
+
+    .sv-nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(74, 108, 247, 0.5);
+    }
+
+    .sv-call-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: inherit;
+      text-decoration: none;
+      opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+
+    .sv-call-link:hover {
+      opacity: 1;
+    }
+
+    /* DESTINATION CARDS */
+    .destination-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 28px 24px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .destination-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #4A6CF7, #7B3FE4);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .destination-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(74, 108, 247, 0.4);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .destination-card:hover::before {
+      opacity: 1;
+    }
+
+    .destination-flag {
+      font-size: 42px;
+      line-height: 1;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .destination-title {
+      font-size: 20px !important;
+      font-weight: 800 !important;
+      margin-bottom: 16px !important;
+      color: #000000 !important;
+    }
+
+    .destination-points p {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.65);
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .destination-points p::before {
+      content: '✓';
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      background: rgba(74, 108, 247, 0.2);
+      border-radius: 50%;
+      font-size: 10px;
+      color: #000000;
+      flex-shrink: 0;
+    }
+
+    /* SERVICES ENHANCEMENTS */
+    .sv-service-card {
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s;
+    }
+
+    .sv-service-card:hover {
+      border-color: rgba(74, 108, 247, 0.35);
+      transform: translateY(-4px);
+    }
+
+    /* TEAM / ABOUT SECTION */
+    .sv-team-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 28px 20px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .sv-team-card:hover {
+      border-color: rgba(74, 108, 247, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .sv-team-avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(74, 108, 247, 0.4);
+      margin: 0 auto 16px;
+      display: block;
+    }
+
+    .sv-team-name {
+      font-size: 16px !important;
+      font-weight: 700 !important;
+      margin-bottom: 4px !important;
+    }
+
+    .sv-team-role {
+      font-size: 13px;
+      opacity: 0.6;
+    }
+
+    /* CONTACT INFO PANEL */
+    .sv-contact-info {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sv-contact-info::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #4A6CF7, #7B3FE4);
+    }
+
+    .sv-contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .sv-contact-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(74, 108, 247, 0.15);
+      border: 1px solid rgba(74, 108, 247, 0.25);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .sv-contact-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      opacity: 0.5;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .sv-contact-val {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .sv-contact-val a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.2s;
+    }
+
+    .sv-contact-val a:hover {
+      color: #4A6CF7;
+    }
+
+    /* FORM STYLES */
+    .sv-form-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05) !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.1) !important;
+      border-radius: 10px !important;
+      padding: 13px 16px !important;
+      font-size: 15px;
+      color: inherit;
+      outline: none;
+      transition: all 0.25s;
+      font-family: inherit;
+      appearance: none;
+    }
+
+    .sv-form-input:focus {
+      border-color: #4A6CF7 !important;
+      background: rgba(74, 108, 247, 0.07) !important;
+      box-shadow: 0 0 0 4px rgba(74, 108, 247, 0.12);
+    }
+
+    .sv-form-input::placeholder {
+      opacity: 0.35;
+    }
+
+    .sv-form-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 40px !important;
+      cursor: pointer;
+    }
+
+    .sv-form-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      opacity: 0.55;
+      margin-bottom: 7px;
+    }
+
+    .sv-form-group {
+      margin-bottom: 16px;
+    }
+
+    .sv-form-group-half {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    @media(max-width:640px) {
+      .sv-form-group-half {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .sv-submit-btn {
+      background: linear-gradient(135deg, #4A6CF7, #7B3FE4);
+      color: #fff;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: 0.2px;
+    }
+
+    .sv-submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(74, 108, 247, 0.45);
+    }
+
+    .sv-submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    #sv-form-status {
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 14px;
+      display: none;
+    }
+
+    #sv-form-status.ok {
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: #4ade80;
+      display: block;
+    }
+
+    #sv-form-status.err {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #f87171;
+      display: block;
+    }
+
+    /* ZERO FEE BADGE */
+    .sv-zero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      color: #4ade80;
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 18px;
+    }
+
+    .sv-zero-badge::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #4ade80;
+      animation: sv-pulse 2s infinite;
+    }
+
+    @keyframes sv-pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1)
+      }
+
+      50% {
+        opacity: .5;
+        transform: scale(1.4)
+      }
+    }
+
+    /* USP highlights */
+    .sv-usp-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0 28px;
+    }
+
+    .sv-usp-chip {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 7px 14px;
+      border-radius: 50px;
+      font-size: 13px;
+      color: rgba(14, 13, 13, 0.75);
+    }
+
+    .sv-usp-chip span {
+      color: #4ade80;
+      font-weight: 700;
+    }
+
+    /* WHATSAPP FLOAT */
+    .sv-whatsapp {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      z-index: 9999;
+      transition: all 0.25s;
+      text-decoration: none;
+    }
+
+    .sv-whatsapp:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+    }
+
+    /* STATS COUNTER */
+    .sv-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 40px 0;
+    }
+
+    .sv-stat {
+      padding: 28px 20px;
+      text-align: center;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.02);
+      transition: background 0.3s;
+    }
+
+    .sv-stat:last-child {
+      border-right: none;
+    }
+
+    .sv-stat:hover {
+      background: rgba(74, 108, 247, 0.07);
+    }
+
+    .sv-stat-num {
+      display: block;
+      font-size: 34px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #4A6CF7, #7B3FE4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .sv-stat-label {
+      font-size: 13px;
+      opacity: 0.55;
+    }
+
+    @media(max-width:640px) {
+      .sv-stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .sv-stat {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+    }
+
+    /* TESTIMONIAL OVERRIDE */
+    .sv-testi-name {
+      font-size: 15px;
+      font-weight: 700;
+      margin-top: 16px;
+    }
+
+    .sv-testi-role {
+      font-size: 13px;
+      opacity: 0.55;
+    }
+
+    .sv-testi-stars {
+      color: #FACC15;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    /* ===== PREMIUM FONT & COLOR SYSTEM ===== */
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 16px;
+      font-weight: 450;
+    }
+    h1 {
+      font-family: 'Plus Jakarta Sans', 'Outfit', system-ui, sans-serif;
+      font-weight: 900 !important;
+      letter-spacing: -0.04em;
+      line-height: 1.1 !important;
+      color: #FFFFFF;
+    }
+    h2 {
+      font-family: 'Plus Jakarta Sans', 'Outfit', system-ui, sans-serif;
+      font-weight: 800 !important;
+      letter-spacing: -0.025em;
+      color: #FFFFFF;
+    }
+    h3 {
+      font-family: 'Plus Jakarta Sans', 'Outfit', system-ui, sans-serif;
+      font-weight: 700 !important;
+      letter-spacing: -0.015em;
+    }
+    /* Light-mode overrides: true dark text */
+    body:not(.b) h1 { color: #080808 !important; }
+    body:not(.b) h2 { color: #111111 !important; }
+    body:not(.b) h3 { color: #1a1a1a !important; }
+    body:not(.b) p  { color: #1a1a2e; }
+    body:not(.b) .sv-usp-chip { color: #1a1a2e; border-color: rgba(0,0,0,0.12); }
+    /* Contrast improvements */
+    .sv-stat-label    { opacity: 0.78; font-size: 12px; font-weight: 600; letter-spacing: 0.02em; text-transform: uppercase; }
+    .sv-form-label    { opacity: 0.80; font-weight: 600; }
+    .sv-contact-label { opacity: 0.80; font-weight: 700; }
+    .sv-team-role     { opacity: 0.75; font-size: 13px; }
+    .sv-testi-role    { opacity: 0.75; }
+    /* Premium stat numbers */
+    .sv-stat-num      { letter-spacing: -0.04em; font-size: 36px !important; }
+    /* Nav text bold */
+    nav ul li a       { font-weight: 600 !important; }
+    /* Section label text */
+    p.ek.yj.mk        { font-weight: 800; letter-spacing: 0.08em; }
+
+    /* ===== ANIMATED HERO GLOBE ===== */
+    .sv-globe-wrapper {
+      position: absolute;
+      right: 3%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 440px;
+      height: 440px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      z-index: 2;
+    }
+    @media(max-width:1023px) { .sv-globe-wrapper { display: none; } }
+
+    /* Pulsing rings */
+    .sv-gring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(74,108,247,0.25);
+      animation: sv-ring-expand 4s ease-out infinite;
+    }
+    .sv-gring:nth-child(1) { width:160px; height:160px; animation-delay:0s;   border-color:rgba(74,108,247,0.45); }
+    .sv-gring:nth-child(2) { width:240px; height:240px; animation-delay:0.8s; }
+    .sv-gring:nth-child(3) { width:320px; height:320px; animation-delay:1.6s; }
+    .sv-gring:nth-child(4) { width:400px; height:400px; animation-delay:2.4s; border-color:rgba(74,108,247,0.1); }
+    @keyframes sv-ring-expand {
+      0%  { transform:scale(0.92); opacity:0.6; }
+      50% { transform:scale(1);    opacity:0.2; }
+      100%{ transform:scale(0.92); opacity:0.6; }
+    }
+
+    /* Globe core */
+    .sv-globe-core {
+      width:130px; height:130px; border-radius:50%;
+      background: radial-gradient(circle at 35% 35%, #6B8EFF, #4A6CF7 40%, #7B3FE4 80%, #5B0FD5);
+      box-shadow: 0 0 80px rgba(74,108,247,0.6), 0 0 30px rgba(74,108,247,0.4), inset 0 0 30px rgba(255,255,255,0.15);
+      position:relative; overflow:hidden; z-index:2;
+      animation: sv-globe-glow 3s ease-in-out infinite;
+    }
+    .sv-globe-core::before {
+      content:''; position:absolute; inset:0; border-radius:50%;
+      background: repeating-linear-gradient(0deg, transparent, transparent 8px, rgba(255,255,255,0.04) 8px, rgba(255,255,255,0.04) 9px),
+                  repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(255,255,255,0.04) 8px, rgba(255,255,255,0.04) 9px);
+      animation: sv-grid-move 12s linear infinite;
+    }
+    .sv-globe-icon {
+      position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+      font-size:70px; line-height:1; z-index:1;
+      animation: sv-globe-drift 20s linear infinite;
+      filter: drop-shadow(0 0 12px rgba(255,255,255,0.3));
+    }
+    @keyframes sv-globe-glow {
+      0%,100% { box-shadow:0 0 80px rgba(74,108,247,0.6),0 0 30px rgba(74,108,247,0.4); }
+      50%      { box-shadow:0 0 120px rgba(74,108,247,0.8),0 0 50px rgba(123,63,228,0.5); }
+    }
+    @keyframes sv-globe-drift {
+      0%  { transform:translate(-50%,-50%) rotate(0deg); }
+      100%{ transform:translate(-50%,-50%) rotate(360deg); }
+    }
+    @keyframes sv-grid-move {
+      0%  { background-position:0 0, 0 0; }
+      100%{ background-position:0 100px, 100px 0; }
+    }
+
+    /* Orbiting flags */
+    .sv-orbit-ring { position:absolute; border-radius:50%; }
+    .sv-orbit-ring.o1 { width:210px; height:210px; animation:sv-orbit-cw 8s linear infinite; }
+    .sv-orbit-ring.o2 { width:280px; height:280px; animation:sv-orbit-ccw 11s linear infinite; }
+    .sv-orbit-ring.o3 { width:350px; height:350px; animation:sv-orbit-cw 15s linear infinite; }
+    .sv-orbit-ring.o4 { width:420px; height:420px; animation:sv-orbit-ccw 19s linear infinite; }
+    @keyframes sv-orbit-cw  { from{transform:rotate(0deg)}  to{transform:rotate(360deg)} }
+    @keyframes sv-orbit-ccw { from{transform:rotate(0deg)}  to{transform:rotate(-360deg)} }
+
+    .sv-orbit-dot {
+      position:absolute;
+      top:-18px; left:50%; transform:translateX(-50%);
+      font-size:26px; line-height:1;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+    }
+    .sv-orbit-ring.o1 .sv-orbit-dot { animation:sv-orbit-ccw 8s linear infinite; }
+    .sv-orbit-ring.o2 .sv-orbit-dot { animation:sv-orbit-cw 11s linear infinite; }
+    .sv-orbit-ring.o3 .sv-orbit-dot { animation:sv-orbit-ccw 15s linear infinite; }
+    .sv-orbit-ring.o4 .sv-orbit-dot { animation:sv-orbit-cw 19s linear infinite; }
+
+    /* Floating mini-stat cards */
+    .sv-mini-stat {
+      position:absolute;
+      background:rgba(255,255,255,0.08);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      border:1px solid rgba(255,255,255,0.18);
+      border-radius:14px;
+      padding:10px 16px;
+      display:flex; flex-direction:column; align-items:center; gap:2px;
+      animation: sv-float-bob 3s ease-in-out infinite;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      min-width: 80px;
+    }
+    .sv-mini-stat strong {
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-weight:800; font-size:16px;
+      background:linear-gradient(135deg,#FFFFFF,#B3C3FF);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+    .sv-mini-stat span { font-size:10px; font-weight:600; opacity:0.65; text-transform:uppercase; letter-spacing:0.04em; color:#fff; }
+    .sv-ms1 { top:8%; right:2%; animation-delay:0s; }
+    .sv-ms2 { top:42%; right:-4%; animation-delay:1s; }
+    .sv-ms3 { bottom:14%; right:6%; animation-delay:2s; }
+    @keyframes sv-float-bob {
+      0%,100%{ transform:translateY(0);   box-shadow:0 8px 32px rgba(0,0,0,0.2); }
+      50%    { transform:translateY(-8px); box-shadow:0 16px 40px rgba(74,108,247,0.25); }
+    }
+
+    /* Hero particles */
+    .sv-particles { position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:0; }
+    .sv-ptcl {
+      position:absolute;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(74,108,247,0.5) 0%, transparent 70%);
+      animation:sv-ptcl-float 6s ease-in-out infinite;
+    }
+    .sv-ptcl:nth-child(1){width:6px;height:6px;top:15%;left:10%;animation-delay:0s;animation-duration:7s;}
+    .sv-ptcl:nth-child(2){width:4px;height:4px;top:60%;left:5%; animation-delay:1s;animation-duration:9s;}
+    .sv-ptcl:nth-child(3){width:8px;height:8px;top:30%;left:20%;animation-delay:2s;animation-duration:6s;}
+    .sv-ptcl:nth-child(4){width:5px;height:5px;top:75%;left:15%;animation-delay:0.5s;animation-duration:8s;}
+    .sv-ptcl:nth-child(5){width:7px;height:7px;top:10%;left:35%;animation-delay:1.5s;animation-duration:7s;}
+    .sv-ptcl:nth-child(6){width:3px;height:3px;top:50%;left:45%;animation-delay:3s;animation-duration:10s;}
+    .sv-ptcl:nth-child(7){width:6px;height:6px;top:85%;left:30%;animation-delay:2.5s;animation-duration:8s;}
+    .sv-ptcl:nth-child(8){width:4px;height:4px;top:40%;left:2%; animation-delay:4s;animation-duration:9s;}
+    @keyframes sv-ptcl-float {
+      0%,100%{ transform:translateY(0) scale(1);   opacity:0.7; }
+      33%    { transform:translateY(-20px) scale(1.3); opacity:1; }
+      66%    { transform:translateY(10px) scale(0.8); opacity:0.4; }
+    }
+
+    /* ===== PREMIUM BUTTON SHIMMER ===== */
+    @keyframes sv-shimmer {
+      0%   { background-position:-200% center; }
+      100% { background-position:200% center; }
+    }
+    .ek.jk.lk.gh.gi.hi.rg.ml.il.vc._d._l,
+    .sv-nav-cta {
+      background-size: 200% auto !important;
+      background-image: linear-gradient(135deg, #4A6CF7 0%, #7B3FE4 40%, #4A6CF7 60%, #9B6BF5 80%, #4A6CF7 100%) !important;
+      animation: sv-shimmer 4s linear infinite;
+    }
+
+    /* ===== PREMIUM CARD GLASS ===== */
+    .sv-service-card {
+      background: rgba(255,255,255,0.03) !important;
+      backdrop-filter: blur(10px);
+    }
+    body:not(.b) .sv-service-card {
+      background: rgba(255,255,255,0.9) !important;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04);
+    }
+    /* ===== DESTINATION CARD DARK TITLE ===== */
+    .destination-title {
+      font-size: 20px !important;
+      font-weight: 800 !important;
+      margin-bottom: 16px !important;
+    }
+    body.b .destination-title { color: #FFFFFF !important; }
+    body:not(.b) .destination-title { color: #080808 !important; }
+
+    /* ===== SECTION HEADING COLORS ===== */
+    body.b h2  { color: #FFFFFF !important; }
+    body.b h1  { color: #FFFFFF !important; }
+
+    /* ===== HERO H1 SPECIAL ===== */
+    .sv-hero-h1 {
+      font-size: clamp(2rem, 4.5vw, 3.6rem) !important;
+      font-weight: 900 !important;
+      letter-spacing: -0.04em !important;
+      line-height: 1.05 !important;
+    }
+    /* Gradient accent on key word */
+    .sv-hero-accent {
+      background: linear-gradient(135deg, #7B9FFF, #C084FC);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["Organization", "EducationalOrganization"],
+        "@id": "https://demo-swift.netlify.app/#organization",
+        "name": "Swift Visa",
+        "alternateName": "SwiftVisa",
+        "url": "https://demo-swift.netlify.app/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://demo-swift.netlify.app/images/logo-light.png",
+          "width": 180,
+          "height": 45
+        },
+        "description": "Swift Visa is India's trusted overseas education consultancy helping students study abroad in USA, UK, Canada, and Australia at zero consulting fees. Founded in 2008 with 10,000+ students placed.",
+        "foundingDate": "2008",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "23/2 8th cross street, T V Nagar, Kodugaiyur",
+          "addressLocality": "Chennai",
+          "addressRegion": "Tamil Nadu",
+          "postalCode": "600118",
+          "addressCountry": "IN"
+        },
+        "telephone": "+919000101213",
+        "email": "anushkumar96@gmail.com",
+        "sameAs": [
+          "https://www.instagram.com/swiftvisa",
+          "https://www.swiftvisa.in"
+        ],
+        "knowsAbout": [
+          "Study Abroad",
+          "University Admissions",
+          "Student Visa Processing",
+          "Scholarship Guidance",
+          "Overseas Education Consultancy"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Study Abroad Services",
+          "itemListElement": [
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Course Selection", "price": "0", "priceCurrency": "INR"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "University Selection", "price": "0", "priceCurrency": "INR"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Visa Processing", "price": "0", "priceCurrency": "INR"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Scholarship Assistance", "price": "0", "priceCurrency": "INR"}}
+          ]
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://demo-swift.netlify.app/#localbusiness",
+        "name": "Swift Visa – Education Consultancy",
+        "image": "https://demo-swift.netlify.app/images/logo-light.png",
+        "telephone": "+919000101213",
+        "email": "anushkumar96@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "23/2 8th cross street, T V Nagar, Kodugaiyur",
+          "addressLocality": "Chennai",
+          "addressRegion": "Tamil Nadu",
+          "postalCode": "600118",
+          "addressCountry": "IN"
+        },
+        "url": "https://demo-swift.netlify.app/",
+        "priceRange": "Free",
+        "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://demo-swift.netlify.app/#webpage",
+        "url": "https://demo-swift.netlify.app/",
+        "name": "Swift Visa – Free Study Abroad | Zero Consulting Fee",
+        "description": "Free study abroad consultancy for Indian students. Expert visa & scholarship support for USA, UK, Canada, Australia. 10,000+ students helped. Zero fees.",
+        "isPartOf": {"@id": "https://demo-swift.netlify.app/#organization"},
+        "inLanguage": "en-IN",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://demo-swift.netlify.app/"}
+          ]
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
+  x-init="
+         darkMode = JSON.parse(localStorage.getItem('darkMode'));
+         $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+  :class="{'b eh': darkMode === true}">
+
+  <!-- ===== Header Start ===== -->
+  <header class="g s r vd ya cj" :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
+    @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false">
+    <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
+      <!-- Logo -->
+      <div class="vd to/4 tc wf yf">
+        <a href="index.html">
+          <img class="om" src="{{ url_for('static', filename='images/logo-light.png') }}" alt="Swift Visa" style="height:45px;width:auto;" />
+          <img class="xc nm" src="{{ url_for('static', filename='images/logo-dark.jpeg') }}" alt="Swift Visa" style="height:45px;width:auto;" />
+        </a>
+        <!-- Hamburger -->
+        <button class="po rc" @click="navigationOpen = !navigationOpen" aria-label="Toggle navigation menu" :aria-expanded="navigationOpen.toString()">
+          <span class="rc i pf re pd">
+            <span class="du-block h q vd yc">
+              <span class="rc i r s eh um tg te rd eb ml jl dl" :class="{ 'ue el': !navigationOpen }"></span>
+              <span class="rc i r s eh um tg te rd eb ml jl fl" :class="{ 'ue qr': !navigationOpen }"></span>
+              <span class="rc i r s eh um tg te rd eb ml jl gl" :class="{ 'ue hl': !navigationOpen }"></span>
+            </span>
+            <span class="du-block h q vd yc lf">
+              <span class="rc eh um tg ml jl el h na r ve yc" :class="{ 'sd dl': !navigationOpen }"></span>
+              <span class="rc eh um tg ml jl qr h s pa vd rd" :class="{ 'sd rr': !navigationOpen }"></span>
+            </span>
+          </span>
+        </button>
+      </div>
+
+      <!-- Nav Links -->
+      <div class="vd wo/4 sd qo f ho oo wf yf" :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }">
+        <nav>
+          <ul class="tc _o sf yo cg ep" style="justify-content:center;">
+            <li><a href="index.html" class="xl" :class="{ 'mk': page === 'home' }">Home</a></li>
+            <li><a href="#About" class="xl">About Us</a></li>
+            <li><a href="#services" class="xl">Services</a></li>
+            <li><a href="#destination" class="xl">Destinations</a></li>
+            <li><a href="#testimonials" class="xl">Testimonials</a></li>
+            <li><a href="#support" class="xl">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="tc wf ig pb no" style="gap:12px;align-items:center;">
+          <a href="tel:+919042035522" class="sv-call-link">📞 +91 9000101213</a>
+          <a href="#support" class="sv-nav-cta">Free Counselling →</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ===== Header End ===== -->
+
+  <main>
+
+    <!-- ===== Hero Start ===== -->
+    <section class="gj do ir hj sp jr i pg" style="overflow:hidden;">
+
+      <!-- Floating background particles -->
+      <div class="sv-particles" aria-hidden="true">
+        <span class="sv-ptcl"></span><span class="sv-ptcl"></span>
+        <span class="sv-ptcl"></span><span class="sv-ptcl"></span>
+        <span class="sv-ptcl"></span><span class="sv-ptcl"></span>
+        <span class="sv-ptcl"></span><span class="sv-ptcl"></span>
+      </div>
+
+      <!-- Hero Images -->
+      <div class="xc fn zd/2 2xl:ud-w-187.5 bd 2xl:ud-h-171.5 h q r">
+        <img src="{{ url_for('static', filename='images/shape-01.svg') }}" alt="" role="presentation" class="xc 2xl:ud-block h t -ud-left-[10%] ua" />
+        <img src="{{ url_for('static', filename='images/shape-02.svg') }}" alt="" role="presentation" class="xc 2xl:ud-block h u p va" />
+        <img src="{{ url_for('static', filename='images/shape-03.svg') }}" alt="" role="presentation" class="xc 2xl:ud-block h v w va" />
+        <img src="{{ url_for('static', filename='images/shape-04.svg') }}" alt="" role="presentation" class="h q r" />
+        <img src="{{ url_for('static', filename='images/hero.png') }}" alt="Swift Visa student counselling" width="600" height="700" class="h q r ua" />
+
+        <!-- ── Animated Globe Overlay ── -->
+        <div class="sv-globe-wrapper" aria-hidden="true">
+          <!-- Pulsing rings -->
+          <div class="sv-gring"></div>
+          <div class="sv-gring"></div>
+          <div class="sv-gring"></div>
+          <div class="sv-gring"></div>
+
+          <!-- Globe core -->
+          <div class="sv-globe-core">
+            <span class="sv-globe-icon">🌍</span>
+          </div>
+
+          <!-- Orbiting country flags -->
+          <div class="sv-orbit-ring o1"><span class="sv-orbit-dot">🇺🇸</span></div>
+          <div class="sv-orbit-ring o2"><span class="sv-orbit-dot">🇬🇧</span></div>
+          <div class="sv-orbit-ring o3"><span class="sv-orbit-dot">🇦🇺</span></div>
+          <div class="sv-orbit-ring o4"><span class="sv-orbit-dot">🇨🇦</span></div>
+
+          <!-- Floating stat chips -->
+          <div class="sv-mini-stat sv-ms1"><strong>10K+</strong><span>Students</span></div>
+          <div class="sv-mini-stat sv-ms2"><strong>99%</strong><span>Visa Success</span></div>
+          <div class="sv-mini-stat sv-ms3"><strong>Free</strong><span>Consulting</span></div>
+        </div>
+        <!-- ── End Animated Globe ── -->
+      </div>
+
+      <!-- Hero Content -->
+      <div class="bb ze ki xn 2xl:ud-px-0">
+        <div class="tc _o">
+          <div class="animate_left jn/2">
+            <div class="sv-zero-badge">Zero Consulting Fee — Always Free for Students</div>
+
+            <h1 class="sv-hero-h1 fk vj zp or kk wm wb">
+              Dream to Study Abroad?<br>
+              <span class="sv-hero-accent">We Make It Happen</span> — For Free.
+            </h1>
+
+            <p class="fq" style="font-size:17px;font-weight:500;line-height:1.7;max-width:520px;">
+              Swift Visa has guided <strong>10,000+ students</strong> into top universities across
+              USA, UK, Canada &amp; Australia. Expert admissions, visa, and scholarship support —
+              at <strong>absolutely zero cost</strong> to you.
+            </p>
+
+            <div class="sv-usp-row">
+              <div class="sv-usp-chip"><span>✓</span> No Hidden Fees</div>
+              <div class="sv-usp-chip"><span>✓</span> 99% Visa Success</div>
+              <div class="sv-usp-chip"><span>✓</span> 48-Hr Offer Letters</div>
+              <div class="sv-usp-chip"><span>✓</span> 900+ Universities</div>
+            </div>
+
+            <div class="tc tf yo zf mb" style="gap:16px;flex-wrap:wrap;margin-top:28px;">
+              <a href="#support" class="ek jk lk gh gi hi rg ml il vc _d _l" style="font-size:16px;padding:14px 32px;font-weight:800;letter-spacing:0.01em;">
+                Get Free Counselling →
+              </a>
+              <a href="tel:+919000101213"
+                style="display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;opacity:.80;text-decoration:none;color:inherit;border:1.5px solid rgba(255,255,255,0.2);padding:13px 22px;border-radius:50px;transition:all .25s;"
+                onmouseover="this.style.opacity=1;this.style.borderColor='rgba(255,255,255,0.5)'"
+                onmouseout="this.style.opacity=0.8;this.style.borderColor='rgba(255,255,255,0.2)'">
+                📞 +91 9000101213
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===== Hero End ===== -->
+
+    <!-- ===== Stats Bar ===== -->
+    <section style="padding:0 30px 50px;">
+      <div class="bb ze ki xn">
+        <div class="sv-stats-grid">
+          <div class="sv-stat"><span class="sv-stat-num">10,000+</span><span class="sv-stat-label">Students
+              Guided</span></div>
+          <div class="sv-stat"><span class="sv-stat-num">900+</span><span class="sv-stat-label">University
+              Partners</span></div>
+          <div class="sv-stat"><span class="sv-stat-num">99%</span><span class="sv-stat-label">Visa Success Rate</span>
+          </div>
+          <div class="sv-stat"><span class="sv-stat-num">48 Hrs</span><span class="sv-stat-label">Offer Letter
+              Delivery</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== About Start ===== -->
+    <section id="About" class="ji gp uq 2xl:ud-py-35 pg">
+      <div class="bb ze ki xn wq">
+        <div class="tc wf gg qq">
+          <!-- About Images -->
+          <div class="animate_left xc gn gg jn/2 i">
+            <div>
+              <img src="{{ url_for('static', filename='images/shape-05.svg') }}" alt="Shape" class="h -ud-left-5 x" />
+              <img src="{{ url_for('static', filename='images/about-01.png') }}" alt="Students" class="ib" />
+              <img src="{{ url_for('static', filename='images/about-02.png') }}" alt="Counselling" />
+            </div>
+            <div>
+              <img src="{{ url_for('static', filename='images/shape-06.svg') }}" alt="Shape" />
+              <img src="{{ url_for('static', filename='images/about-03.png') }}" alt="Visa" class="ob gb" />
+              <img src="{{ url_for('static', filename='images/shape-07.svg') }}" alt="Shape" class="bb" />
+            </div>
+          </div>
+
+          <!-- About Content -->
+          <div class="animate_right jn/2">
+            <p class="ek yj mk gb">ABOUT SWIFTVISA</p>
+            <h2 class="fk vj zp pr kk wm qb">Founded in Hyderabad in 2008 — Your Trusted Education Partner</h2>
+            <p class="uo">
+              swiftvisa was established with one core principle: educating students on the right course options based on
+              their profile, in reputed universities across the world. Over 12+ years, we have earned the trust of more
+              than <strong>10,000 students</strong> by providing comprehensive, transparent, and result-driven overseas
+              education guidance.
+            </p>
+            <p class="uo" style="margin-top:14px;">
+              We have command over the global education system and are actively involved in giving thorough and reliable
+              information about higher education in the USA, UK, Canada, and Australia — all at <strong>zero cost to
+                students</strong>.
+            </p>
+
+            <div style="display:flex;flex-direction:column;gap:14px;margin:24px 0;">
+              <div style="display:flex;gap:12px;align-items:flex-start;">
+                <span style="font-size:20px;margin-top:2px;">🎯</span>
+                <div>
+                  <strong style="display:block;font-size:15px;margin-bottom:3px;">Our Mission</strong>
+                  <p style="font-size:14px;opacity:.65;line-height:1.55;">Educate students on the right course
+                    alternatives based on their profiles in reputable universities across the world.</p>
+                </div>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start;">
+                <span style="font-size:20px;margin-top:2px;">🌟</span>
+                <div>
+                  <strong style="display:block;font-size:15px;margin-bottom:3px;">Our Vision</strong>
+                  <p style="font-size:14px;opacity:.65;line-height:1.55;">To become India's most trusted overseas
+                    education partner, enabling students to transform their aspirations into global achievements.</p>
+                </div>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start;">
+                <span style="font-size:20px;margin-top:2px;">💡</span>
+                <div>
+                  <strong style="display:block;font-size:15px;margin-bottom:3px;">Why Choose Us</strong>
+                  <p style="font-size:14px;opacity:.65;line-height:1.55;">We're compensated by our partner universities
+                    — so our expert guidance, visa support, and scholarship assistance are <strong>completely
+                      free</strong> for every student.</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="https://www.youtube.com/watch?v=xcJtL7QggTI" data-fslightbox class="vc wf hg mb">
+              <span class="tc wf xf be dd rg i gh ua">
+                <span class="nf h vc yc vd rg gh qk -ud-z-1"></span>
+                <img src="{{ url_for('static', filename='images/icon-play.svg') }}" alt="Play" />
+              </span>
+              <span class="kk">SEE HOW WE WORK</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===== About End ===== -->
+
+    <!-- ===== Trusted By ===== -->
+    <section class="pj vp mr">
+      <div
+        x-data="{ sectionTitle: `Top Universities in Our Global Network`, sectionTitleText: `Swift Visa partners with 900+ universities across USA, UK, Canada &amp; Australia — guiding you into the best institutions worldwide.`}">
+        <div class="animate_top bb ze rj ki xn vq">
+          <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
+          <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+        </div>
+      </div>
+      <div class="bb ze ah ch pm hj xp ki xn 2xl:ud-px-49 bc">
+        <div class="wc rf qn zf cp kq xf wf">
+          <a href="#destination" class="rc animate_top"><img class="th wl ml il zl om" src="{{ url_for('static', filename='images/brand-light-01.svg') }}"
+              alt="MIT – Massachusetts Institute of Technology" /><img class="xc sk ml il zl nm" src="{{ url_for('static', filename='images/brand-dark-01.svg') }}" alt="MIT" /></a>
+          <a href="#destination" class="rc animate_top"><img class="tk ml il zl om" src="{{ url_for('static', filename='images/brand-light-02.svg') }}"
+              alt="University of Oxford" /><img class="xc sk ml il zl nm" src="{{ url_for('static', filename='images/brand-dark-02.svg') }}" alt="University of Oxford" /></a>
+          <a href="#destination" class="rc animate_top"><img class="tk ml il zl om" src="{{ url_for('static', filename='images/brand-light-03.svg') }}"
+              alt="University of Toronto" /><img class="xc sk ml il zl nm" src="{{ url_for('static', filename='images/brand-dark-03.svg') }}" alt="University of Toronto" /></a>
+          <a href="#destination" class="rc animate_top"><img class="tk ml il zl om" src="{{ url_for('static', filename='images/brand-light-04.svg') }}"
+              alt="University of Melbourne" /><img class="xc sk ml il zl nm" src="{{ url_for('static', filename='images/brand-dark-04.svg') }}" alt="University of Melbourne" /></a>
+          <a href="#destination" class="rc animate_top"><img class="tk ml il zl om" src="{{ url_for('static', filename='images/brand-light-05.svg') }}"
+              alt="Harvard University" /><img class="xc sk ml il zl nm" src="{{ url_for('static', filename='images/brand-dark-05.svg') }}" alt="Harvard University" /></a>
+          <a href="#destination" class="rc animate_top"><img class="tk ml il zl om" src="{{ url_for('static', filename='images/brand-light-06.svg') }}"
+              alt="UCL London" /><img class="xc sk ml il zl nm" src="{{ url_for('static', filename='images/brand-dark-06.svg') }}" alt="UCL London" /></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Study Destinations Start ===== -->
+    <section id="destination" class="i pg ji gp uq">
+      <span class="rc h s r vd fd/5 fh rm"></span>
+      <img src="{{ url_for('static', filename='images/shape-08.svg') }}" alt="Shape" class="h q r" />
+      <img src="{{ url_for('static', filename='images/shape-09.svg') }}" alt="Shape" class="of h y z/2" />
+      <img src="{{ url_for('static', filename='images/shape-10.svg') }}" alt="Shape" class="h _ aa" />
+      <img src="{{ url_for('static', filename='images/shape-11.svg') }}" alt="Shape" class="of h m ba" />
+
+      <div
+        x-data="{ sectionTitle: `🌍 Study Destinations`, sectionTitleText: `Explore top global destinations with the best universities, career opportunities, and student support.`}">
+        <div class="animate_top bb ze rj ki xn vq">
+          <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
+          <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+        </div>
+      </div>
+
+      <div class="bb ze i va ki xn xq jb jo">
+        <div class="wc qf pn xo gg cp">
+
+          <!-- UK -->
+          <div class="animate_top rj destination-card">
+            <span class="destination-flag">🇬🇧</span>
+            <h3 class="destination-title">United Kingdom</h3>
+            <div class="destination-points">
+              <p>1-Year Masters Programs</p>
+              <p>Scholarships up to £5,000</p>
+              <p>2-Year Post Study Work Visa</p>
+              <p>Top Russell Group universities</p>
+            </div>
+          </div>
+
+          <!-- Canada -->
+          <div class="animate_top rj destination-card">
+            <span class="destination-flag">🇨🇦</span>
+            <h3 class="destination-title">Canada</h3>
+            <div class="destination-points">
+              <p>PR Pathways available</p>
+              <p>Affordable tuition fees</p>
+              <p>High visa success rate</p>
+              <p>Work during studies permitted</p>
+            </div>
+          </div>
+
+          <!-- Australia -->
+          <div class="animate_top rj destination-card">
+            <span class="destination-flag">🇦🇺</span>
+            <h3 class="destination-title">Australia</h3>
+            <div class="destination-points">
+              <p>Top-ranked universities</p>
+              <p>2–4 years post-study work</p>
+              <p>High quality of life</p>
+              <p>Strong Indian student community</p>
+            </div>
+          </div>
+
+          <!-- USA -->
+          <div class="animate_top rj destination-card">
+            <span class="destination-flag">🇺🇸</span>
+            <h3 class="destination-title">United States</h3>
+            <div class="destination-points">
+              <p>STEM & research-focused programs</p>
+              <p>Global career opportunities</p>
+              <p>OPT extension for STEM</p>
+              <p>World's top ranked universities</p>
+            </div>
+          </div>
+
+          <!-- Europe -->
+          <div class="animate_top rj destination-card">
+            <span class="destination-flag">🇪🇺</span>
+            <h3 class="destination-title">Europe</h3>
+            <div class="destination-points">
+              <p>Low-cost education options</p>
+              <p>Schengen zone exposure</p>
+              <p>Study in Germany, France, Ireland</p>
+              <p>Growing tech & research hubs</p>
+            </div>
+          </div>
+
+          <!-- Global -->
+          <div class="animate_top rj destination-card"
+            style="background:linear-gradient(135deg,rgba(74,108,247,0.15),rgba(123,63,228,0.1));border-color:rgba(74,108,247,0.3);">
+            <span class="destination-flag">🌍</span>
+            <h3 class="destination-title">Global Access</h3>
+            <div class="destination-points">
+              <p>900+ Universities Worldwide</p>
+              <p>End-to-End Support</p>
+              <p>Admissions to Visa Guidance</p>
+              <p>Free for every student</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- ===== Study Destinations End ===== -->
+
+    <!-- ===== CTA Strip ===== -->
+    <section class="i pg gh ji">
+      <img class="h p q" src="{{ url_for('static', filename='images/shape-16.svg') }}" alt="Bg Shape" />
+      <div class="bb ye i z-10 ki xn dr">
+        <div class="tc uf sn tn un gg">
+          <div class="animate_left to/2">
+            <h2 class="fk vj zp pr lk ac">Start Your Study Abroad Journey Today!</h2>
+            <p class="lk">Talk to Experts · Get Free Counseling · Visit Our Office / Apply Online</p>
+          </div>
+          <div class="animate_right bf">
+            <a href="#support" class="vc ek kk hh rg ol il cm gi hi">Get Started Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Services Start ===== -->
+    <section id="services" class="lj tp kr">
+      <div>
+        <div class="animate_top bb ze rj ki xn vq">
+          <h2 class="fk vj pr kk wm on/5 gq/2 bb _b">Our Comprehensive Study Abroad Services</h2>
+          <p class="bb on/5 wo/5 hq">From course selection to visa approval and post-arrival support — complete
+            end-to-end solutions at zero cost.</p>
+        </div>
+      </div>
+
+      <div class="bb ze ki xn yq mb en">
+        <div class="wc qf pn xo ng">
+          <div class="animate_top sg oi pi zq ml il am cn _m sv-service-card">
+            <img src="{{ url_for('static', filename='images/icon-04.svg') }}" alt="Course Selection" />
+            <h3 class="ek zj kk wm nb _b">Course Selection</h3>
+            <p>Profile-based course matching across UG, PG, MBA, Diploma & Pathway Programs from 900+ universities.</p>
+          </div>
+          <div class="animate_top sg oi pi zq ml il am cn _m sv-service-card">
+            <img src="{{ url_for('static', filename='images/icon-05.svg') }}" alt="University Selection" />
+            <h3 class="ek zj kk wm nb _b">University Selection</h3>
+            <p>Direct admissions with partner universities. Personalized country & course guidance based on your
+              profile.</p>
+          </div>
+          <div class="animate_top sg oi pi zq ml il am cn _m sv-service-card">
+            <img src="{{ url_for('static', filename='images/icon-06.svg') }}" alt="Applications" />
+            <h3 class="ek zj kk wm nb _b">Applications</h3>
+            <p>Complete application support — SOP writing, documentation, and submission tracking. 48-hour offer
+              letters.</p>
+          </div>
+          <div class="animate_top sg oi pi zq ml il am cn _m sv-service-card">
+            <img src="{{ url_for('static', filename='images/icon-07.svg') }}" alt="Scholarships" />
+            <h3 class="ek zj kk wm nb _b">Scholarship Assistance</h3>
+            <p>Up to ₹3–10 Lakhs in scholarships. Merit-based & university scholarships with financial planning
+              guidance.</p>
+          </div>
+          <div class="animate_top sg oi pi zq ml il am cn _m sv-service-card">
+            <img src="{{ url_for('static', filename='images/icon-04.svg') }}" alt="Education Loan" />
+            <h3 class="ek zj kk wm nb _b">Education Loan</h3>
+            <p>Loan support from top banks & NBFCs. 100% tuition + living expense coverage for eligible students.</p>
+          </div>
+          <div class="animate_top sg oi pi zq ml il am cn _m sv-service-card">
+            <img src="{{ url_for('static', filename='images/icon-05.svg') }}" alt="Visa Processing" />
+            <h3 class="ek zj kk wm nb _b">Visa Processing</h3>
+            <p>99%+ visa success rate. Complete documentation, mock interviews & SOP assistance included.</p>
+          </div>
+          <div class="animate_top sg oi pi zq ml il am cn _m sv-service-card">
+            <img src="{{ url_for('static', filename='images/icon-06.svg') }}" alt="Air Ticket" />
+            <h3 class="ek zj kk wm nb _b">Air Ticket Assistance</h3>
+            <p>Best-fare flight booking guidance and pre-departure travel checklist for a smooth start abroad.</p>
+          </div>
+          <div class="animate_top sg oi pi zq ml il am cn _m sv-service-card">
+            <img src="{{ url_for('static', filename='images/icon-07.svg') }}" alt="Accommodation" />
+            <h3 class="ek zj kk wm nb _b">Accommodation &amp; Airport Pickup</h3>
+            <p>Student accommodation search, airport pickup coordination, and local settling-in support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===== Services End ===== -->
+
+    <!-- ===== Counter Start ===== -->
+    <section class="i pg qh rm ji hp">
+      <img src="{{ url_for('static', filename='images/shape-11.svg') }}" alt="Shape" class="of h ga ha ke" />
+      <img src="{{ url_for('static', filename='images/shape-07.svg') }}" alt="Shape" class="h ia o ae jf" />
+      <img src="{{ url_for('static', filename='images/shape-14.svg') }}" alt="Shape" class="h ja ka" />
+      <img src="{{ url_for('static', filename='images/shape-15.svg') }}" alt="Shape" class="h q p" />
+      <div class="bb ze i va ki xn br">
+        <div class="tc uf sn tn xf un gg">
+          <div class="animate_top me/5 ln rj">
+            <h2 class="gk vj zp or kk wm hc">900+</h2>
+            <p class="ek bk aq">University Partners</p>
+          </div>
+          <div class="animate_top me/5 ln rj">
+            <h2 class="gk vj zp or kk wm hc">10,000+</h2>
+            <p class="ek bk aq">Students Guided</p>
+          </div>
+          <div class="animate_top me/5 ln rj">
+            <h2 class="gk vj zp or kk wm hc">99%</h2>
+            <p class="ek bk aq">Visa Success Rate</p>
+          </div>
+          <div class="animate_top me/5 ln rj">
+            <h2 class="gk vj zp or kk wm hc">12+</h2>
+            <p class="ek bk aq">Years of Experience</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===== Counter End ===== -->
+
+    <!-- ===== Team Start ===== -->
+    <section class="ji gp uq pg">
+      <div
+        x-data="{ sectionTitle: `Meet Our Team`, sectionTitleText: `The experts behind 10,000+ successful student journeys — experienced, passionate, and committed to your success.`}">
+        <div class="animate_top bb ze rj ki xn vq">
+          <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
+          <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+        </div>
+      </div>
+      <div class="bb ze i va ki xn xq jb jo">
+        <div class="wc qf pn xo gg cp">
+          <div class="animate_top rj sv-team-card">
+            <img src="{{ url_for('static', filename='images/team-01.png') }}" alt="Sandeep Kumar Gouru" class="sv-team-avatar" />
+            <h3 class="sv-team-name">Sandeep Kumar Gouru</h3>
+            <p class="sv-team-role">Managing Director &amp; Founder</p>
+          </div>
+          <div class="animate_top rj sv-team-card">
+            <img src="{{ url_for('static', filename='images/team-02.png') }}" alt="Jaiprakash Ake" class="sv-team-avatar" />
+            <h3 class="sv-team-name">Jaiprakash Ake</h3>
+            <p class="sv-team-role">Co-Founder</p>
+          </div>
+          <div class="animate_top rj sv-team-card">
+            <img src="{{ url_for('static', filename='images/team-03.png') }}" alt="Santhosh Kumar Doddi" class="sv-team-avatar" />
+            <h3 class="sv-team-name">Santhosh Kumar Doddi</h3>
+            <p class="sv-team-role">Business Development Manager</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===== Team End ===== -->
+
+    <!-- ===== Testimonials Start ===== -->
+    <section id="testimonials" class="hj rp hr">
+      <div
+        x-data="{ sectionTitle: `What Our Students Say`, sectionTitleText: `Real stories from students who achieved their dream of studying abroad with swiftvisa — at zero cost.`}">
+        <div class="animate_top bb ze rj ki xn vq">
+          <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
+          <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+        </div>
+      </div>
+
+      <div class="bb ze ki xn ar">
+        <div class="animate_top jb cq">
+          <div class="swiper testimonial-01">
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+                <div class="i hh rm sg vk xm bi qj">
+                  <span class="rc je md/2 gh xg h q r"></span>
+                  <span class="rc je md/2 mh yg h q p"></span>
+                  <div class="tc sf rn tn un zf dp">
+                    <div>
+                      <div class="sv-testi-stars">★★★★★</div>
+                      <img src="{{ url_for('static', filename='images/icon-quote.svg') }}" alt="Quote" />
+                      <p class="ek ik xj _p kc fb">
+                        It gives me an immense pleasure to share my experience with swiftvisa. I would like to recommend
+                        all students to choose swiftvisa educational consultancy. The guidance was exceptional and
+                        completely free!
+                      </p>
+                      <p class="sv-testi-name">Naveen Nagavarapu</p>
+                      <p class="sv-testi-role">Student — St. Mary Engineering College</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="i hh rm sg vk xm bi qj">
+                  <span class="rc je md/2 gh xg h q r"></span>
+                  <span class="rc je md/2 mh yg h q p"></span>
+                  <div class="tc sf rn tn un zf dp">
+                    <div>
+                      <div class="sv-testi-stars">★★★★★</div>
+                      <img src="{{ url_for('static', filename='images/icon-quote.svg') }}" alt="Quote" />
+                      <p class="ek ik xj _p kc fb">
+                        Thank you swiftvisa for my admission! We got a seat within 2 days. Awesome experience with
+                        Sandeep — very helpful and caring. Gives great guidance and support. Thank you sir!
+                      </p>
+                      <p class="sv-testi-name">Kavitha Kukkadapu</p>
+                      <p class="sv-testi-role">MBA Student — Avanthi</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="i hh rm sg vk xm bi qj">
+                  <span class="rc je md/2 gh xg h q r"></span>
+                  <span class="rc je md/2 mh yg h q p"></span>
+                  <div class="tc sf rn tn un zf dp">
+                    <div>
+                      <div class="sv-testi-stars">★★★★★</div>
+                      <img src="{{ url_for('static', filename='images/icon-quote.svg') }}" alt="Quote" />
+                      <p class="ek ik xj _p kc fb">
+                        This is one of the best career guidance I have known. Very polite, very friendly, clearing every
+                        doubt. Please approach them for any queries — best career advice and absolutely zero fees
+                        charged.
+                      </p>
+                      <p class="sv-testi-name">Krishna Agarwal</p>
+                      <p class="sv-testi-role">BSc, Engineering</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="tc wf xf fg jb">
+              <div class="swiper-button-prev c tc wf xf ie ld rg _g dh pf ml vr hh rm tl zm rl ym" role="button" aria-label="Previous testimonial">
+                <svg class="th lm" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M3.52366 7.83336L7.99366 12.3034L6.81533 13.4817L0.333663 7.00002L6.81533 0.518357L7.99366 1.69669L3.52366 6.16669L13.667 6.16669L13.667 7.83336L3.52366 7.83336Z" />
+                </svg>
+              </div>
+              <div class="swiper-button-next c tc wf xf ie ld rg _g dh pf ml vr hh rm tl zm rl ym" role="button" aria-label="Next testimonial">
+                <svg class="th lm" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M10.4763 6.16664L6.00634 1.69664L7.18467 0.518311L13.6663 6.99998L7.18467 13.4816L6.00634 12.3033L10.4763 7.83331H0.333008V6.16664H10.4763Z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===== Testimonials End ===== -->
+
+    <!-- ===== Contact Start ===== -->
+    <section id="support" class="i pg fh rm ji gp uq">
+      <img src="{{ url_for('static', filename='images/shape-06.svg') }}" alt="Shape" class="h aa y" />
+      <img src="{{ url_for('static', filename='images/shape-03.svg') }}" alt="Shape" class="h ca u" />
+      <img src="{{ url_for('static', filename='images/shape-07.svg') }}" alt="Shape" class="h w da ee" />
+      <img src="{{ url_for('static', filename='images/shape-12.svg') }}" alt="Shape" class="h p s" />
+      <img src="{{ url_for('static', filename='images/shape-13.svg') }}" alt="Shape" class="h r q" />
+
+      <div
+        x-data="{ sectionTitle: `Book Your Free Counselling`, sectionTitleText: `Talk to our experts and take the first step toward your dream university — completely free of charge.`}">
+        <div class="animate_top bb ze rj ki xn vq">
+          <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
+          <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+        </div>
+      </div>
+
+      <div class="i va bb ye ki xn wq jb mo">
+        <div class="tc uf sn tf rn un zf xl:gap-10">
+
+          <!-- Contact Info Panel -->
+          <div class="animate_top w-full mn/5 to/3 sv-contact-info">
+            <h3 style="font-size:22px;font-weight:700;margin-bottom:8px;">We're Here For You</h3>
+            <p style="font-size:14px;opacity:.6;margin-bottom:28px;line-height:1.6;">Our counsellors are ready to help
+              you navigate admissions, visa, scholarships, and more — all at zero cost.</p>
+
+            <div class="sv-contact-detail">
+              <span class="sv-contact-icon">📍</span>
+              <div>
+                <span class="sv-contact-label">Office Address</span>
+                <p class="sv-contact-val">23/2 8th cross street, T V Nagar, Kodugaiyur, Chennai - 600118</p>
+              </div>
+            </div>
+            <div class="sv-contact-detail">
+              <span class="sv-contact-icon">📧</span>
+              <div>
+                <span class="sv-contact-label">Email Address</span>
+                <p class="sv-contact-val"><a href="mailto:anushkumar96@gmail.com">anushkumar96@gmail.com</a></p>
+              </div>
+            </div>
+            <div class="sv-contact-detail">
+              <span class="sv-contact-icon">📞</span>
+              <div>
+                <span class="sv-contact-label">Phone Number</span>
+                <p class="sv-contact-val"><a href="tel:+919042035522">+91 9000101213</a></p>
+              </div>
+            </div>
+            <div class="sv-contact-detail">
+              <span class="sv-contact-icon">🌐</span>
+              <div>
+                <span class="sv-contact-label">Website</span>
+                <p class="sv-contact-val"><a href="https://www.swiftvisa.in" target="_blank">www.swiftvisa.in</a></p>
+              </div>
+            </div>
+
+            <div style="height:1px;background:rgba(255,255,255,0.08);margin:20px 0;"></div>
+
+            <!-- Social Links -->
+            <p
+              style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;opacity:.5;margin-bottom:12px;">
+              Follow Us</p>
+            <ul class="tc wf fg" style="gap:10px;">
+              <li>
+                <a href="https://www.facebook.com/swiftvisa" target="_blank" rel="noopener noreferrer" aria-label="Follow Swift Visa on Facebook" class="c tc wf xf ie ld rg ml il tl">
+                  <svg class="th lm ml il" width="10" height="18" viewBox="0 0 10 18" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M6.66634 10.25H8.74968L9.58301 6.91669H6.66634V5.25002C6.66634 4.39169 6.66634 3.58335 8.33301 3.58335H9.58301V0.783354C9.31134 0.74752 8.28551 0.666687 7.20218 0.666687C4.93968 0.666687 3.33301 2.04752 3.33301 4.58335V6.91669H0.833008V10.25H3.33301V17.3334H6.66634V10.25Z"
+                      fill="" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/swiftvisa" target="_blank" rel="noopener noreferrer" aria-label="Follow Swift Visa on Instagram" class="c tc wf xf ie ld rg ml il tl">
+                  <svg class="th lm ml il" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                      fill="" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/swiftvisa" target="_blank" rel="noopener noreferrer" aria-label="Follow Swift Visa on LinkedIn" class="c tc wf xf ie ld rg ml il tl">
+                  <svg class="th lm ml il" width="19" height="18" viewBox="0 0 19 18" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M4.36198 2.58327C4.36174 3.0695 4.16835 3.53572 3.82436 3.87937C3.48037 4.22301 3.01396 4.41593 2.52773 4.41569C2.0415 4.41545 1.57528 4.22206 1.23164 3.87807C0.887991 3.53408 0.69507 3.06767 0.695313 2.58144C0.695556 2.09521 0.888943 1.62899 1.23293 1.28535C1.57692 0.941701 2.04333 0.748781 2.52956 0.749024C3.01579 0.749267 3.48201 0.942654 3.82566 1.28664C4.1693 1.63063 4.36222 2.09704 4.36198 2.58327ZM4.41698 5.77327H0.750313V17.2499H4.41698V5.77327ZM10.2103 5.77327H6.56198V17.2499H10.1736V11.2274C10.1736 7.87244 14.5461 7.56077 14.5461 11.2274V17.2499H18.167V9.98077C18.167 4.32494 11.6953 4.53577 10.1736 7.31327L10.2103 5.77327Z"
+                      fill="" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+
+            <div
+              style="margin-top:24px;padding:14px 16px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:10px;">
+              <p style="font-size:13px;color:#4ade80;font-weight:700;margin-bottom:4px;">💡 Zero Fee Promise</p>
+              <p style="font-size:12px;opacity:.6;line-height:1.5;">All counselling, application support, and visa
+                guidance is 100% free for students — forever.</p>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="animate_top w-full nn/5 vo/3 vk sg hh sm yh tq">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                {% for category, message in messages %}
+                  <div class="sv-flash sv-flash-{{ category }}" role="alert" style="padding:14px 18px;border-radius:10px;margin-bottom:18px;font-weight:600;font-size:15px;{% if category == 'success' %}background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.4);color:#22c55e;{% else %}background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.35);color:#f87171;{% endif %}">
+                    {{ message }}
+                  </div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+            <form id="sv-contact-form" action="{{ url_for('contact') }}" method="POST" novalidate>
+              <div class="sv-form-group-half">
+                <div>
+                  <label class="sv-form-label" for="sv-name">Full Name *</label>
+                  <input type="text" id="sv-name" name="name" placeholder="Your full name" class="sv-form-input"
+                    required />
+                </div>
+                <div>
+                  <label class="sv-form-label" for="sv-email">Email Address *</label>
+                  <input type="email" id="sv-email" name="email" placeholder="you@email.com" class="sv-form-input"
+                    required />
+                </div>
+              </div>
+              <div class="sv-form-group-half">
+                <div>
+                  <label class="sv-form-label" for="sv-phone">Phone Number *</label>
+                  <input type="tel" id="sv-phone" name="phone" placeholder="+91 XXXXX XXXXX" class="sv-form-input"
+                    required />
+                </div>
+                <div>
+                  <label class="sv-form-label" for="sv-country">Desired Country *</label>
+                  <select id="sv-country" name="country" class="sv-form-input sv-form-select" required>
+                    <option value="" disabled selected>Select destination</option>
+                    <option>🇬🇧 United Kingdom</option>
+                    <option>🇺🇸 United States</option>
+                    <option>🇨🇦 Canada</option>
+                    <option>🇦🇺 Australia</option>
+                    <option>🇩🇪 Germany</option>
+                    <option>🇫🇷 France</option>
+                    <option>🇮🇪 Ireland</option>
+                    <option>🌍 Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="sv-form-group">
+                <label class="sv-form-label" for="sv-query">Your Query *</label>
+                <textarea id="sv-query" name="query" rows="5"
+                  placeholder="Tell us about your academic background, desired course, or any specific questions..."
+                  class="sv-form-input" style="resize:vertical;min-height:110px;" required></textarea>
+              </div>
+              <div id="sv-form-status"></div>
+              <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:6px;">
+                <button type="submit" class="sv-submit-btn" id="sv-submit">
+                  Send Message
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </button>
+                <p style="font-size:12px;opacity:.5;line-height:1.5;">Zero fees. Our experts respond within 2 hours on
+                  business days.</p>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- ===== Contact End ===== -->
+
+  </main>
+
+  <!-- ===== Footer Start ===== -->
+  <footer>
+    <div class="bb ze ki xn 2xl:ud-px-0">
+      <div class="ji gp">
+        <div class="tc uf ap gg fp">
+          <div class="animate_top zd/2 to/4">
+            <a href="index.html">
+              <img src="{{ url_for('static', filename='images/logo-light.png') }}" alt="Swift Visa" class="om" style="height:70px;width:auto;" />
+              <img src="{{ url_for('static', filename='images/logo-dark.jpeg') }}" alt="Swift Visa" class="xc nm" style="height:70px;width:auto;" />
+            </a>
+            <p class="lc fb" style="margin-top:14px;">Swift Visa— Founded in Hyderabad in 2008. Your trusted overseas
+              education partner helping students reach top global universities at zero cost.</p>
+            <ul class="tc wf cg" style="margin-top:16px;">
+              <li><a href="https://www.facebook.com/swiftvisa" target="_blank" rel="noopener noreferrer" aria-label="Follow Swift Visa on Facebook"><svg class="vh ul cl il" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M14 13.5H16.5L17.5 9.5H14V7.5C14 6.47 14 5.5 16 5.5H17.5V2.14C17.174 2.097 15.943 2 14.643 2C11.928 2 10 3.657 10 6.7V9.5H7V13.5H10V22H14V13.5Z"
+                      fill="" />
+                  </svg></a></li>
+              <li><a href="https://www.instagram.com/swiftvisa/" target="_blank" rel="noopener noreferrer" aria-label="Follow Swift Visa on Instagram"><svg class="vh ul cl il" width="24"
+                    height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                      fill="" />
+                  </svg></a></li>
+              <li><a href="https://www.linkedin.com/company/swiftvisa" target="_blank" rel="noopener noreferrer" aria-label="Follow Swift Visa on LinkedIn"><svg class="vh ul cl il" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M6.94 5.00002C6.93974 5.53046 6.72877 6.03906 6.35351 6.41394C5.97825 6.78883 5.46944 6.99929 4.939 6.99902C4.40857 6.99876 3.89997 6.78779 3.52508 6.41253C3.1502 6.03727 2.93974 5.52846 2.94 4.99802C2.94027 4.46759 3.15124 3.95899 3.5265 3.5841C3.90176 3.20922 4.41057 2.99876 4.941 2.99902C5.47144 2.99929 5.98004 3.21026 6.35492 3.58552C6.72981 3.96078 6.94027 4.46959 6.94 5.00002ZM7 8.48002H3V21H7V8.48002ZM13.32 8.48002H9.34V21H13.28V14.43C13.28 10.77 18.05 10.43 18.05 14.43V21H22V13.07C22 6.90002 14.94 7.13002 13.28 10.16L13.32 8.48002Z"
+                      fill="" />
+                  </svg></a></li>
+            </ul>
+          </div>
+
+          <div class="vd ro tc sf rn un gg vn">
+            <div class="animate_top">
+              <h4 class="kk wm tj ec">Quick Links</h4>
+              <ul>
+                <li><a href="index.html" class="sc xl vb">Home</a></li>
+                <li><a href="#About" class="sc xl vb">About Us</a></li>
+                <li><a href="#services" class="sc xl vb">Services</a></li>
+                <li><a href="#destination" class="sc xl vb">Destinations</a></li>
+                <li><a href="#support" class="sc xl vb">Contact Us</a></li>
+              </ul>
+            </div>
+
+            <div class="animate_top">
+              <h4 class="kk wm tj ec">Destinations</h4>
+              <ul>
+                <li><a href="#destination" class="sc xl vb">🇺🇸 Study in USA</a></li>
+                <li><a href="#destination" class="sc xl vb">🇬🇧 Study in UK</a></li>
+                <li><a href="#destination" class="sc xl vb">🇦🇺 Study in Australia</a></li>
+                <li><a href="#destination" class="sc xl vb">🇨🇦 Study in Canada</a></li>
+                <li><a href="#destination" class="sc xl vb">🇪🇺 Study in Europe</a></li>
+              </ul>
+            </div>
+
+            <div class="animate_top">
+              <h4 class="kk wm tj ec">Contact Us</h4>
+              <ul>
+                <li><a href="tel:+919000101213" class="sc xl vb">📞 +91 9000101213</a></li>
+                <li><a href="mailto:anushkumar96@gmail.com" class="sc xl vb">📧 anushkumar96@gmail.com</a></li>
+                <li><a href="https://www.swiftvisa.in" target="_blank" class="sc xl vb">🌐 swiftvisa.in </a></li>
+              </ul>
+              <p style="font-size:12px;opacity:.5;margin-top:12px;line-height:1.6;">23/2 8th cross street, T V Nagar,<br>
+                Kodugaiyur, Chennai - 600118</p>
+            </div>
+
+            <div class="animate_top">
+              <h4 class="kk wm tj ec">Our Services</h4>
+              <ul>
+                <li><a href="#services" class="sc xl vb">Course Selection</a></li>
+                <li><a href="#services" class="sc xl vb">University Selection</a></li>
+                <li><a href="#services" class="sc xl vb">Scholarship Assistance</a></li>
+                <li><a href="#services" class="sc xl vb">Visa Processing</a></li>
+                <li><a href="#services" class="sc xl vb">Education Loan</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bh ch pm tc uf sf yo wf xf ap cg fp bj">
+        <div class="animate_top">
+          <p>No Hidden Fees — Direct Path to Your Dream College at Zero Cost.</p>
+        </div>
+        <div class="animate_top" style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center;">
+          <p>&copy; 2026 Swift Visa. All rights reserved.</p>
+          <span style="opacity:0.3;">|</span>
+          <a href="/sitemap.xml" target="_blank" style="font-size:12px;opacity:0.55;text-decoration:none;color:inherit;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.55">Sitemap</a>
+          <span style="opacity:0.3;">|</span>
+          <a href="https://cal.com/anush-legacy-8ln8ix/swift-visa" target="_blank" rel="noopener noreferrer" style="font-size:12px;opacity:0.55;text-decoration:none;color:inherit;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.55">Book a Call</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ===== Footer End ===== -->
+
+  <!-- Back To Top -->
+  <button class="xc wf xf ie ld vg sr gh tr g sa ta _a" aria-label="Back to top" @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+    @scroll.window="scrollTop = (window.pageYOffset > 50) ? true : false" :class="{ 'uc' : scrollTop }">
+    <svg class="uh se qd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <path
+        d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
+    </svg>
+  </button>
+
+  <!-- WhatsApp Float -->
+  <a href="https://api.whatsapp.com/send/?phone=919042035522&text=Hi+Swift+Visa%2C+I+want+to+know+more+about+study+abroad+options&type=phone_number&app_absent=0"
+    target="_blank" class="sv-whatsapp" title="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <!-- Contact Form Script -->
+  <script>
+    document.getElementById('sv-contact-form').addEventListener('submit', function (e) {
+      const btn = document.getElementById('sv-submit');
+      const fields = ['sv-name', 'sv-email', 'sv-phone', 'sv-country', 'sv-query'];
+      const allFilled = fields.every(id => document.getElementById(id).value.trim());
+      if (!allFilled) {
+        e.preventDefault();
+        const status = document.getElementById('sv-form-status');
+        if (status) {
+          status.className = 'err';
+          status.textContent = 'Please fill in all required fields.';
+          status.style.display = 'block';
+        }
+        return;
+      }
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+      }
+    });
+  </script>
+
+  <script>
+    const setup = () => {
+      return {
+        isNavOpen: false,
+        billPlan: 'monthly',
+        plans: [
+          { name: 'Starter', price: { monthly: 29, annually: 29 * 12 - 199 }, features: ['400 GB Storage', 'Unlimited Photos & Videos', 'Exclusive Support'] },
+          { name: 'Growth Plan', price: { monthly: 59, annually: 59 * 12 - 100 }, features: ['400 GB Storage', 'Unlimited Photos & Videos', 'Exclusive Support'] },
+          { name: 'Business', price: { monthly: 139, annually: 139 * 12 - 100 }, features: ['400 GB Storage', 'Unlimited Photos & Videos', 'Exclusive Support'] },
+        ],
+      };
+    };
+  </script>
+  <script defer src="{{ url_for('static', filename='bundle.js') }}"></script>
+
+  <!-- ===== Premium Interactions ===== -->
+  <script>
+    /* Scroll-triggered animated counters */
+    function animateCounter(el, target, suffix, duration) {
+      let start = 0, startTime = null;
+      const step = (timestamp) => {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(ease * target);
+        el.textContent = (current >= 1000 ? (current / 1000).toFixed(0) + 'K' : current) + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = (target >= 1000 ? (target / 1000).toFixed(0) + 'K' : target) + suffix;
+      };
+      requestAnimationFrame(step);
+    }
+
+    const counterTargets = [
+      { sel: '.sv-stat:nth-child(1) .sv-stat-num', val: 10000, suffix: '+', dur: 2000, label: '10,000+' },
+      { sel: '.sv-stat:nth-child(2) .sv-stat-num', val: 900,   suffix: '+', dur: 1500, label: '900+' },
+      { sel: '.sv-stat:nth-child(3) .sv-stat-num', val: 99,    suffix: '%', dur: 1200, label: '99%' },
+      { sel: '.sv-stat:nth-child(4) .sv-stat-num', val: 48,    suffix: ' Hrs', dur: 900, label: '48 Hrs' },
+    ];
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          counterTargets.forEach(t => {
+            const el = document.querySelector(t.sel);
+            if (el && !el.dataset.animated) {
+              el.dataset.animated = '1';
+              animateCounter(el, t.val, t.suffix, t.dur);
+            }
+          });
+          counterObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+
+    const statsGrid = document.querySelector('.sv-stats-grid');
+    if (statsGrid) counterObserver.observe(statsGrid);
+
+    /* Smooth hover lift on destination + service cards */
+    document.querySelectorAll('.destination-card, .sv-service-card, .sv-team-card').forEach(card => {
+      card.style.transition = 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
+    });
+
+    /* Active nav link highlight on scroll */
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+      });
+      navLinks.forEach(a => {
+        a.style.opacity = a.getAttribute('href') === '#' + current ? '1' : '';
+        a.style.fontWeight = a.getAttribute('href') === '#' + current ? '800' : '';
+      });
+    }, { passive: true });
+  </script>
+
+    
+
+
+
+</body>
+
+</html>

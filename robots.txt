@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /signin.html
+Disallow: /signup.html
+
+# Sitemaps
+Sitemap: https://demo-swift.netlify.app/sitemap.xml

@@ -1,0 +1,7 @@
+<svg width="160" height="52" viewBox="0 0 160 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="52" fill="none"/>
+  <text x="80" y="22" font-family="Georgia, serif" font-size="20" font-weight="700" fill="white" text-anchor="middle" letter-spacing="1.5">HARVARD</text>
+  <line x1="36" y1="28" x2="124" y2="28" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+  <text x="80" y="40" font-family="Georgia, serif" font-size="9" fill="rgba(255,255,255,0.55)" text-anchor="middle" letter-spacing="3">UNIVERSITY</text>
+  <text x="80" y="49" font-family="Arial, sans-serif" font-size="6.5" fill="rgba(255,255,255,0.35)" text-anchor="middle" letter-spacing="1.5">EST. 1636 · CAMBRIDGE, USA</text>
+</svg>
