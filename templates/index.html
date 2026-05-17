@@ -5,10 +5,11 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Swift Visa – Free Study Abroad | Zero Consulting Fee</title>
+  <title>Swift Visa | Student Visa Consultant for UK, Canada, Australia</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Free study abroad consultancy for Indian students. Expert visa &amp; scholarship support for USA, UK, Canada &amp; Australia — 10,000+ students placed at zero cost. Book your free counselling today." />
+  <meta name="description" content="Swift Visa is a student visa consultant for the UK, Canada, and Australia. 99% visa success rate, 10,000+ students placed, free consultation. Zero consulting fees." />
+  <meta name="keywords" content="student visa consultant, study abroad visa services, overseas education consultancy, UK student visa application, Canada study permit, Australia student visa requirements, free visa consultation, student visa success rate" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <link rel="canonical" href="https://demo-swift.netlify.app/" />
 
@@ -44,6 +45,21 @@
   <!-- Main Stylesheet -->
   <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" />
   <style>
+    /* ===== GLOBAL LAYOUT GUARDS ===== */
+    html, body { overflow-x: hidden; max-width: 100%; }
+    img, svg, video { max-width: 100%; height: auto; }
+    section + section { margin-top: 0; }
+    /* Tap targets */
+    a, button { -webkit-tap-highlight-color: transparent; }
+    .sv-nav-cta, .sv-submit-btn, .sv-whatsapp { min-height: 44px; }
+    /* Skip-to-content for keyboard users */
+    .sv-skip-link {
+      position: absolute; left: -9999px; top: 8px;
+      background: #4A6CF7; color: #fff; padding: 8px 14px;
+      border-radius: 6px; font-weight: 700; z-index: 99999;
+    }
+    .sv-skip-link:focus { left: 12px; outline: 2px solid #fff; }
+
     /* ===== SWIFT VISA CUSTOM OVERRIDES ===== */
 
     /* NAV ENHANCEMENTS */
@@ -594,7 +610,9 @@
       pointer-events: none;
       z-index: 2;
     }
-    @media(max-width:1023px) { .sv-globe-wrapper { display: none; } }
+    @media (max-width: 1023px) and (min-width: 641px) {
+      .sv-globe-wrapper { display: none; }
+    }
 
     /* Pulsing rings */
     .sv-gring {
@@ -666,34 +684,67 @@
     .sv-orbit-ring.o3 .sv-orbit-dot { animation:sv-orbit-ccw 15s linear infinite; }
     .sv-orbit-ring.o4 .sv-orbit-dot { animation:sv-orbit-cw 19s linear infinite; }
 
-    /* Floating mini-stat cards */
+    /* Floating mini-stat cards — premium centered chips */
     .sv-mini-stat {
-      position:absolute;
-      background:rgba(255,255,255,0.08);
-      backdrop-filter:blur(16px);
-      -webkit-backdrop-filter:blur(16px);
-      border:1px solid rgba(255,255,255,0.18);
-      border-radius:14px;
-      padding:10px 16px;
-      display:flex; flex-direction:column; align-items:center; gap:2px;
+      position: absolute;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 16px;
+      padding: 14px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-width: 110px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(80,60,200,0.10);
+      z-index: 10;
       animation: sv-float-bob 3s ease-in-out infinite;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-      min-width: 80px;
     }
     .sv-mini-stat strong {
-      font-family:'Plus Jakarta Sans',sans-serif;
-      font-weight:800; font-size:16px;
-      background:linear-gradient(135deg,#FFFFFF,#B3C3FF);
-      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-      background-clip:text;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #FFFFFF, #B3C3FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
-    .sv-mini-stat span { font-size:10px; font-weight:600; opacity:0.65; text-transform:uppercase; letter-spacing:0.04em; color:#fff; }
-    .sv-ms1 { top:8%; right:2%; animation-delay:0s; }
-    .sv-ms2 { top:42%; right:-4%; animation-delay:1s; }
-    .sv-ms3 { bottom:14%; right:6%; animation-delay:2s; }
+    .sv-mini-stat span {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.78);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 3px;
+    }
+    .sv-ms1 { top: 12%; right: -8%; animation-delay: 0s; }
+    .sv-ms2 { top: 42%; right: -12%; animation-delay: 0.6s; }
+    .sv-ms3 { bottom: 14%; right: -6%; animation-delay: 1.2s; }
     @keyframes sv-float-bob {
-      0%,100%{ transform:translateY(0);   box-shadow:0 8px 32px rgba(0,0,0,0.2); }
-      50%    { transform:translateY(-8px); box-shadow:0 16px 40px rgba(74,108,247,0.25); }
+      0%,100%{ transform:translateY(0);   box-shadow:0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(80,60,200,0.10); }
+      50%    { transform:translateY(-8px); box-shadow:0 16px 40px rgba(74,108,247,0.28), 0 4px 12px rgba(80,60,200,0.18); }
+    }
+
+    /* Mobile hero chip scale-down + repositioning */
+    @media (max-width: 640px) {
+      .sv-globe-wrapper.sv-mobile-chips-only {
+        display: block;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+      .sv-globe-wrapper.sv-mobile-chips-only > :not(.sv-mini-stat) { display: none; }
+      .sv-mini-stat { transform: scale(0.85); padding: 12px 16px; min-width: 96px; }
+      .sv-ms1 { right: 2%;  top: 8%; }
+      .sv-ms2 { right: -2%; top: 38%; }
+      .sv-ms3 { right: 4%;  bottom: 10%; }
     }
 
     /* Hero particles */
@@ -869,6 +920,8 @@
          $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
   :class="{'b eh': darkMode === true}">
 
+  <a href="#main-content" class="sv-skip-link">Skip to main content</a>
+
   <!-- ===== Header Start ===== -->
   <header class="g s r vd ya cj" :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
     @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false">
@@ -876,8 +929,7 @@
       <!-- Logo -->
       <div class="vd to/4 tc wf yf">
         <a href="index.html">
-          <img class="om" src="{{ url_for('static', filename='images/logo-light.png') }}" alt="Swift Visa" style="height:45px;width:auto;" />
-          <img class="xc nm" src="{{ url_for('static', filename='images/logo-dark.jpeg') }}" alt="Swift Visa" style="height:45px;width:auto;" />
+          <img class="om" src="{{ url_for('static', filename='images/logo-light.png') }}" alt="Swift Visa" style="height:90px;width:auto;" />
         </a>
         <!-- Hamburger -->
         <button class="po rc" @click="navigationOpen = !navigationOpen" aria-label="Toggle navigation menu" :aria-expanded="navigationOpen.toString()">
@@ -917,7 +969,7 @@
   </header>
   <!-- ===== Header End ===== -->
 
-  <main>
+  <main id="main-content">
 
     <!-- ===== Hero Start ===== -->
     <section class="gj do ir hj sp jr i pg" style="overflow:hidden;">
@@ -932,14 +984,49 @@
 
       <!-- Hero Images -->
       <div class="xc fn zd/2 2xl:ud-w-187.5 bd 2xl:ud-h-171.5 h q r">
-        <img src="{{ url_for('static', filename='images/shape-01.svg') }}" alt="" role="presentation" class="xc 2xl:ud-block h t -ud-left-[10%] ua" />
-        <img src="{{ url_for('static', filename='images/shape-02.svg') }}" alt="" role="presentation" class="xc 2xl:ud-block h u p va" />
         <img src="{{ url_for('static', filename='images/shape-03.svg') }}" alt="" role="presentation" class="xc 2xl:ud-block h v w va" />
-        <img src="{{ url_for('static', filename='images/shape-04.svg') }}" alt="" role="presentation" class="h q r" />
-        <img src="{{ url_for('static', filename='images/hero.png') }}" alt="Swift Visa student counselling" width="600" height="700" class="h q r ua" />
+        <div style="
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 420px;
+    height: 500px;
+    margin: 80px auto 0 auto; /* pushes whole section slightly down */
+">
+
+    <!-- Background Shape -->
+    <img 
+        src="{{ url_for('static', filename='images/shape-04.svg') }}" 
+        alt=""
+        role="presentation"
+        style="
+            position: absolute;
+            left: 150px;
+            bottom: -20px; /* moved slightly lower */
+            width: 700px;
+            height: 500px;
+            z-index: 1;
+        "
+    />
+
+    <!-- Main Hero Image -->
+    <img 
+        src="{{ url_for('static', filename='images/hero.png') }}" 
+        alt="Swift Visa student counselling"
+        style="
+            position: relative;
+            width: 320px;
+            height: auto;
+            z-index: 2;
+            margin-top: 80px; /* moves girl image lower */
+        "
+    />
+
+</div>
 
         <!-- ── Animated Globe Overlay ── -->
-        <div class="sv-globe-wrapper" aria-hidden="true">
+        <div class="sv-globe-wrapper sv-mobile-chips-only" aria-hidden="true">
           <!-- Pulsing rings -->
           <div class="sv-gring"></div>
           <div class="sv-gring"></div>
@@ -972,14 +1059,12 @@
             <div class="sv-zero-badge">Zero Consulting Fee — Always Free for Students</div>
 
             <h1 class="sv-hero-h1 fk vj zp or kk wm wb">
-              Dream to Study Abroad?<br>
-              <span class="sv-hero-accent">We Make It Happen</span> — For Free.
+              Study Abroad?<br>
+              <span class="sv-hero-accent">We Make It Happen.</span> For Free.
             </h1>
 
             <p class="fq" style="font-size:17px;font-weight:500;line-height:1.7;max-width:520px;">
-              Swift Visa has guided <strong>10,000+ students</strong> into top universities across
-              USA, UK, Canada &amp; Australia. Expert admissions, visa, and scholarship support —
-              at <strong>absolutely zero cost</strong> to you.
+              Swift Visa is a student visa consultant trusted by <strong>10,000+ students</strong> across South Asia. We handle admissions, the UK student visa application, Canada study permit, and Australia student visa requirements at <strong>zero cost</strong> to you.
             </p>
 
             <div class="sv-usp-row">
@@ -1043,22 +1128,17 @@
           <!-- About Content -->
           <div class="animate_right jn/2">
             <p class="ek yj mk gb">ABOUT SWIFTVISA</p>
-            <h2 class="fk vj zp pr kk wm qb">Founded in Hyderabad in 2008 — Your Trusted Education Partner</h2>
+            <h2 class="fk vj zp pr kk wm qb">Founded in Hyderabad, 2008. Trusted by 10,000+ Students.</h2>
             <p class="uo">
-              swiftvisa was established with one core principle: educating students on the right course options based on
-              their profile, in reputed universities across the world. Over 12+ years, we have earned the trust of more
-              than <strong>10,000 students</strong> by providing comprehensive, transparent, and result-driven overseas
-              education guidance.
+              Swift Visa is an overseas education consultancy with one job: getting you into the right course, at the right university, for the right reasons. Over 12+ years we've earned the trust of more than <strong>10,000 students</strong> with honest, profile-first guidance.
             </p>
             <p class="uo" style="margin-top:14px;">
-              We have command over the global education system and are actively involved in giving thorough and reliable
-              information about higher education in the USA, UK, Canada, and Australia — all at <strong>zero cost to
-                students</strong>.
+              Our study abroad visa services cover the USA, UK, Canada, and Australia. Course shortlisting, applications, scholarships, and student visa work are all <strong>free for students</strong>. Universities pay us, so you don't.
             </p>
 
             <div style="display:flex;flex-direction:column;gap:14px;margin:24px 0;">
               <div style="display:flex;gap:12px;align-items:flex-start;">
-                <span style="font-size:20px;margin-top:2px;">🎯</span>
+                <span style="font-size:20px;margin-top:2px;"></span>
                 <div>
                   <strong style="display:block;font-size:15px;margin-bottom:3px;">Our Mission</strong>
                   <p style="font-size:14px;opacity:.65;line-height:1.55;">Educate students on the right course
@@ -1066,7 +1146,7 @@
                 </div>
               </div>
               <div style="display:flex;gap:12px;align-items:flex-start;">
-                <span style="font-size:20px;margin-top:2px;">🌟</span>
+                <span style="font-size:20px;margin-top:2px;"></span>
                 <div>
                   <strong style="display:block;font-size:15px;margin-bottom:3px;">Our Vision</strong>
                   <p style="font-size:14px;opacity:.65;line-height:1.55;">To become India's most trusted overseas
@@ -1074,7 +1154,7 @@
                 </div>
               </div>
               <div style="display:flex;gap:12px;align-items:flex-start;">
-                <span style="font-size:20px;margin-top:2px;">💡</span>
+                <span style="font-size:20px;margin-top:2px;"></span>
                 <div>
                   <strong style="display:block;font-size:15px;margin-bottom:3px;">Why Choose Us</strong>
                   <p style="font-size:14px;opacity:.65;line-height:1.55;">We're compensated by our partner universities
@@ -1084,7 +1164,7 @@
               </div>
             </div>
 
-            <a href="https://www.youtube.com/watch?v=xcJtL7QggTI" data-fslightbox class="vc wf hg mb">
+            <a href="https://www.youtube.com/" data-fslightbox class="vc wf hg mb">
               <span class="tc wf xf be dd rg i gh ua">
                 <span class="nf h vc yc vd rg gh qk -ud-z-1"></span>
                 <img src="{{ url_for('static', filename='images/icon-play.svg') }}" alt="Play" />
@@ -1100,7 +1180,7 @@
     <!-- ===== Trusted By ===== -->
     <section class="pj vp mr">
       <div
-        x-data="{ sectionTitle: `Top Universities in Our Global Network`, sectionTitleText: `Swift Visa partners with 900+ universities across USA, UK, Canada &amp; Australia — guiding you into the best institutions worldwide.`}">
+        x-data="{ sectionTitle: `Top Universities in Our Global Network`, sectionTitleText: `Swift Visa partners with 900+ universities across the USA, UK, Canada, and Australia. We get you into the institutions that fit your profile.`}">
         <div class="animate_top bb ze rj ki xn vq">
           <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
           <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
@@ -1241,9 +1321,8 @@
     <section id="services" class="lj tp kr">
       <div>
         <div class="animate_top bb ze rj ki xn vq">
-          <h2 class="fk vj pr kk wm on/5 gq/2 bb _b">Our Comprehensive Study Abroad Services</h2>
-          <p class="bb on/5 wo/5 hq">From course selection to visa approval and post-arrival support — complete
-            end-to-end solutions at zero cost.</p>
+          <h2 class="fk vj pr kk wm on/5 gq/2 bb _b">Study Abroad Visa Services for Indian Students</h2>
+          <p class="bb on/5 wo/5 hq">Course selection, applications, scholarships, visa filing, and post-arrival support. Every step, zero fees.</p>
         </div>
       </div>
 
@@ -1263,8 +1342,7 @@
           <div class="animate_top sg oi pi zq ml il am cn _m sv-service-card">
             <img src="{{ url_for('static', filename='images/icon-06.svg') }}" alt="Applications" />
             <h3 class="ek zj kk wm nb _b">Applications</h3>
-            <p>Complete application support — SOP writing, documentation, and submission tracking. 48-hour offer
-              letters.</p>
+            <p>SOP writing, documentation, and submission tracking. 48-hour offer letters from partner universities.</p>
           </div>
           <div class="animate_top sg oi pi zq ml il am cn _m sv-service-card">
             <img src="{{ url_for('static', filename='images/icon-07.svg') }}" alt="Scholarships" />
@@ -1329,7 +1407,7 @@
     <!-- ===== Team Start ===== -->
     <section class="ji gp uq pg">
       <div
-        x-data="{ sectionTitle: `Meet Our Team`, sectionTitleText: `The experts behind 10,000+ successful student journeys — experienced, passionate, and committed to your success.`}">
+        x-data="{ sectionTitle: `Meet Our Team`, sectionTitleText: `The senior consultants behind 10,000+ student visa approvals. Each lead has 8+ years working with USA, UK, Canada, and Australia visa officers.`}">
         <div class="animate_top bb ze rj ki xn vq">
           <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
           <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
@@ -1461,7 +1539,7 @@
       <img src="{{ url_for('static', filename='images/shape-13.svg') }}" alt="Shape" class="h r q" />
 
       <div
-        x-data="{ sectionTitle: `Book Your Free Counselling`, sectionTitleText: `Talk to our experts and take the first step toward your dream university — completely free of charge.`}">
+        x-data="{ sectionTitle: `Book Your Free Visa Consultation`, sectionTitleText: `Talk to a senior consultant about UK, Canada, or Australia student visas. Free, no obligation, no fees ever.`}">
         <div class="animate_top bb ze rj ki xn vq">
           <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
           <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
@@ -1474,8 +1552,7 @@
           <!-- Contact Info Panel -->
           <div class="animate_top w-full mn/5 to/3 sv-contact-info">
             <h3 style="font-size:22px;font-weight:700;margin-bottom:8px;">We're Here For You</h3>
-            <p style="font-size:14px;opacity:.6;margin-bottom:28px;line-height:1.6;">Our counsellors are ready to help
-              you navigate admissions, visa, scholarships, and more — all at zero cost.</p>
+            <p style="font-size:14px;opacity:.6;margin-bottom:28px;line-height:1.6;">Senior counsellors handle admissions, visa filing, and scholarships. Serving students across South Asia, the Middle East, and Africa.</p>
 
             <div class="sv-contact-detail">
               <span class="sv-contact-icon">📍</span>
@@ -1632,11 +1709,9 @@
         <div class="tc uf ap gg fp">
           <div class="animate_top zd/2 to/4">
             <a href="index.html">
-              <img src="{{ url_for('static', filename='images/logo-light.png') }}" alt="Swift Visa" class="om" style="height:70px;width:auto;" />
-              <img src="{{ url_for('static', filename='images/logo-dark.jpeg') }}" alt="Swift Visa" class="xc nm" style="height:70px;width:auto;" />
+              <img src="{{ url_for('static', filename='images/logo-light.png') }}" alt="Swift Visa" class="om" style="height: 70px;;width:auto;" />
             </a>
-            <p class="lc fb" style="margin-top:14px;">Swift Visa— Founded in Hyderabad in 2008. Your trusted overseas
-              education partner helping students reach top global universities at zero cost.</p>
+            <p class="lc fb" style="margin-top:14px;">Swift Visa. Founded in Hyderabad, 2008. Student visa consultants for USA, UK, Canada, and Australia. Zero fees, always.</p>
             <ul class="tc wf cg" style="margin-top:16px;">
               <li><a href="https://www.facebook.com/swiftvisa" target="_blank" rel="noopener noreferrer" aria-label="Follow Swift Visa on Facebook"><svg class="vh ul cl il" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path
@@ -1730,6 +1805,534 @@
     </svg>
   </button>
 
+  <!-- ===== Lead Popup Start ===== -->
+  <style>
+    /* Scoped under .sv-lp so it cannot leak to the dark contact form */
+    .sv-lp-overlay {
+      --sv-navy: #1B2A52;
+      --sv-navy-deep: #0F1A35;
+      --sv-crimson: #B22234;
+      --sv-crimson-deep: #8A1A28;
+      --sv-cream: #FAF8F3;
+      --sv-ink: #1F2937;
+      --sv-muted: #6B7280;
+      --sv-line: #E5E7EB;
+      position: fixed; inset: 0;
+      background: rgba(15, 26, 53, 0.55);
+      backdrop-filter: blur(8px) saturate(140%);
+      -webkit-backdrop-filter: blur(8px) saturate(140%);
+      z-index: 999999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity .28s ease;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    }
+    .sv-lp-overlay.open { display: flex; opacity: 1; }
+
+    .sv-lp-card {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      background: #FFFFFF;
+      color: var(--sv-ink);
+      border-radius: 16px;
+      padding: 28px 26px 22px;
+      box-shadow: 0 30px 80px rgba(15, 26, 53, 0.35), 0 4px 12px rgba(15, 26, 53, 0.12);
+      transform: translateY(16px) scale(0.97);
+      opacity: 0;
+      transition: transform .35s cubic-bezier(.2,.9,.3,1.1), opacity .25s ease;
+      overflow: hidden;
+      max-height: calc(100vh - 40px);
+      overflow-y: auto;
+    }
+    .sv-lp-overlay.open .sv-lp-card {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+
+    .sv-lp-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--sv-navy) 0%, var(--sv-navy) 45%, var(--sv-crimson) 55%, var(--sv-crimson) 100%);
+    }
+
+    .sv-lp-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .sv-lp-logo {
+      height: 38px;
+      width: auto;
+      display: block;
+    }
+    .sv-lp-brand-line {
+      flex: 1;
+      height: 1px;
+      background: var(--sv-line);
+    }
+    .sv-lp-badge {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--sv-crimson);
+      background: rgba(178, 34, 52, 0.08);
+      padding: 4px 10px;
+      border-radius: 50px;
+      white-space: nowrap;
+    }
+
+    .sv-lp-close {
+      position: absolute;
+      top: 14px; right: 14px;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--sv-line);
+      background: #fff;
+      color: var(--sv-navy);
+      font-size: 18px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .18s, border-color .18s, color .18s;
+      padding: 0;
+      z-index: 2;
+    }
+    .sv-lp-close:hover { background: var(--sv-cream); border-color: var(--sv-navy); }
+    .sv-lp-close:focus-visible { outline: 2px solid var(--sv-navy); outline-offset: 2px; }
+
+    .sv-lp-title {
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin: 0 0 6px;
+      letter-spacing: -0.3px;
+      color: var(--sv-navy-deep);
+    }
+    .sv-lp-title em {
+      font-style: normal;
+      color: var(--sv-crimson);
+    }
+    .sv-lp-sub {
+      font-size: 13.5px;
+      color: var(--sv-muted);
+      margin: 0 0 18px;
+      line-height: 1.55;
+    }
+
+    .sv-lp-field { margin-bottom: 12px; }
+    .sv-lp-label {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      color: var(--sv-navy);
+      margin-bottom: 6px;
+    }
+    .sv-lp-input,
+    .sv-lp-select {
+      width: 100%;
+      background: #fff;
+      border: 1.5px solid var(--sv-line);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 14.5px;
+      color: var(--sv-ink);
+      outline: none;
+      transition: border-color .18s, box-shadow .18s, background .18s;
+      font-family: inherit;
+      box-sizing: border-box;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .sv-lp-input::placeholder { color: #9CA3AF; }
+    .sv-lp-input:hover,
+    .sv-lp-select:hover { border-color: #C9CFDA; }
+    .sv-lp-input:focus,
+    .sv-lp-select:focus {
+      border-color: var(--sv-navy);
+      box-shadow: 0 0 0 4px rgba(27, 42, 82, 0.10);
+      background: #FCFCFD;
+    }
+    .sv-lp-input.is-invalid,
+    .sv-lp-select.is-invalid {
+      border-color: var(--sv-crimson);
+      box-shadow: 0 0 0 4px rgba(178, 34, 52, 0.10);
+    }
+    .sv-lp-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7' viewBox='0 0 10 7'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%231B2A52' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 38px;
+      cursor: pointer;
+    }
+
+    .sv-lp-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 460px) { .sv-lp-row { grid-template-columns: 1fr; gap: 0; } }
+
+    .sv-lp-submit {
+      width: 100%;
+      background: var(--sv-crimson);
+      color: #fff;
+      border: none;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-size: 14.5px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      cursor: pointer;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: inherit;
+    }
+    .sv-lp-submit:hover:not(:disabled) {
+      background: var(--sv-crimson-deep);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 22px rgba(178, 34, 52, 0.35);
+    }
+    .sv-lp-submit:focus-visible { outline: 2px solid var(--sv-navy); outline-offset: 2px; }
+    .sv-lp-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+
+    .sv-lp-spinner {
+      width: 14px; height: 14px;
+      border: 2px solid rgba(255,255,255,0.4);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: sv-lp-spin .7s linear infinite;
+      display: inline-block;
+    }
+    @keyframes sv-lp-spin { to { transform: rotate(360deg); } }
+
+    .sv-lp-status {
+      margin-top: 12px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      display: none;
+      line-height: 1.4;
+    }
+    .sv-lp-status.ok  { background: #ECFDF5; border: 1px solid #A7F3D0; color: #047857; display: block; }
+    .sv-lp-status.err { background: #FEF2F2; border: 1px solid #FECACA; color: #B91C1C; display: block; }
+
+    .sv-lp-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      justify-content: center;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--sv-line);
+    }
+    .sv-lp-trust-item {
+      font-size: 11.5px;
+      color: var(--sv-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: 600;
+    }
+    .sv-lp-trust-item svg { color: var(--sv-navy); flex: none; }
+
+    .sv-lp-fab {
+      position: fixed;
+      bottom: 96px; right: 26px;
+      z-index: 9990;
+      background: var(--sv-navy, #1B2A52);
+      color: #fff;
+      border: none;
+      padding: 11px 18px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      cursor: pointer;
+      box-shadow: 0 10px 26px rgba(15, 26, 53, 0.32);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background .2s, transform .2s, box-shadow .2s;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+    .sv-lp-fab:hover { background: #0F1A35; transform: translateY(-2px); box-shadow: 0 14px 32px rgba(15, 26, 53, 0.40); }
+    .sv-lp-fab:focus-visible { outline: 2px solid #B22234; outline-offset: 3px; }
+    .sv-lp-fab .sv-lp-fab-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: #B22234;
+      box-shadow: 0 0 0 0 rgba(178, 34, 52, 0.6);
+      animation: sv-lp-pulse 1.8s ease-out infinite;
+    }
+    @keyframes sv-lp-pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(178, 34, 52, 0.55); }
+      70%  { box-shadow: 0 0 0 10px rgba(178, 34, 52, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(178, 34, 52, 0); }
+    }
+    @media (max-width: 480px) {
+      .sv-lp-fab { bottom: 84px; right: 14px; padding: 10px 14px; font-size: 12px; }
+      .sv-lp-card { padding: 24px 20px 18px; border-radius: 14px; }
+      .sv-lp-title { font-size: 19px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .sv-lp-overlay, .sv-lp-card, .sv-lp-submit, .sv-lp-fab, .sv-lp-fab .sv-lp-fab-dot { transition: none !important; animation: none !important; }
+    }
+  </style>
+
+  <div class="sv-lp-overlay" id="sv-lp-overlay" role="dialog" aria-modal="true" aria-labelledby="sv-lp-title" aria-describedby="sv-lp-sub" aria-hidden="true">
+    <div class="sv-lp-card" role="document">
+      <button type="button" class="sv-lp-close" id="sv-lp-close" aria-label="Close form">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+
+      <div class="sv-lp-head">
+        <img class="sv-lp-logo" src="{{ url_for('static', filename='images/logo-light.png') }}" alt="Swift Visa" />
+        <span class="sv-lp-brand-line" aria-hidden="true"></span>
+        <span class="sv-lp-badge">Free Counselling</span>
+      </div>
+
+      <h3 class="sv-lp-title" id="sv-lp-title">Your dream university — <em>zero consulting fees.</em></h3>
+      <p class="sv-lp-sub" id="sv-lp-sub">Share your details and a Swift Visa expert will reach out within 24 hours with a personalised plan.</p>
+
+      <form id="sv-lp-form" novalidate autocomplete="on">
+        <div class="sv-lp-field">
+          <label class="sv-lp-label" for="sv-lp-name">Full Name</label>
+          <input type="text" id="sv-lp-name" name="name" class="sv-lp-input" placeholder="e.g. Anand Kumar" autocomplete="name" required />
+        </div>
+
+        <div class="sv-lp-field">
+          <label class="sv-lp-label" for="sv-lp-email">Email Address</label>
+          <input type="email" id="sv-lp-email" name="email" class="sv-lp-input" placeholder="you@email.com" autocomplete="email" required />
+        </div>
+
+        <div class="sv-lp-row">
+          <div class="sv-lp-field">
+            <label class="sv-lp-label" for="sv-lp-phone">Phone Number</label>
+            <input type="tel" id="sv-lp-phone" name="phone" class="sv-lp-input" placeholder="+91 98765 43210" autocomplete="tel" inputmode="tel" pattern="[\+\d\s\-\(\)]{7,}" required />
+          </div>
+          <div class="sv-lp-field">
+            <label class="sv-lp-label" for="sv-lp-country">Interested Country</label>
+            <select id="sv-lp-country" name="country" class="sv-lp-select" required>
+              <option value="" disabled selected>Choose a destination</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="United States">United States</option>
+              <option value="Canada">Canada</option>
+              <option value="Australia">Australia</option>
+              <option value="Germany">Germany</option>
+              <option value="France">France</option>
+              <option value="Ireland">Ireland</option>
+              <option value="New Zealand">New Zealand</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="sv-lp-submit" id="sv-lp-submit">
+          <span class="sv-lp-submit-label">Request Free Callback</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+
+        <div class="sv-lp-status" id="sv-lp-status" role="status" aria-live="polite"></div>
+
+        <div class="sv-lp-trust" aria-label="Why students choose Swift Visa">
+          <span class="sv-lp-trust-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> 99% Visa Success</span>
+          <span class="sv-lp-trust-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> 10,000+ Students Placed</span>
+          <span class="sv-lp-trust-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Zero Hidden Fees</span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <button type="button" class="sv-lp-fab" id="sv-lp-fab" aria-label="Open free consultation form">
+    <span class="sv-lp-fab-dot" aria-hidden="true"></span>
+    Free Consultation
+  </button>
+
+  <script>
+    (function () {
+      const overlay  = document.getElementById('sv-lp-overlay');
+      const card     = overlay && overlay.querySelector('.sv-lp-card');
+      const form     = document.getElementById('sv-lp-form');
+      const fab      = document.getElementById('sv-lp-fab');
+      const closeBtn = document.getElementById('sv-lp-close');
+      const submit   = document.getElementById('sv-lp-submit');
+      const submitLabel = submit && submit.querySelector('.sv-lp-submit-label');
+      const status   = document.getElementById('sv-lp-status');
+      if (!overlay || !form || !card || !submit) return;
+
+      const AUTO_OPEN_DELAY_MS = 1200;
+      const ORIGINAL_LABEL = submitLabel ? submitLabel.textContent : 'Request Free Callback';
+      const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const FOCUSABLE_SEL = 'a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+      let isOpen = false;
+      let isSubmitting = false;
+      let prevBodyOverflow = '';
+      let lastFocused = null;
+      let pointerDownInsideCard = false;
+      let autoOpenTimer = null;
+
+      const setStatus = (cls, text) => {
+        status.className = 'sv-lp-status ' + cls;
+        status.textContent = text;
+      };
+      const clearStatus = () => { status.className = 'sv-lp-status'; status.textContent = ''; };
+
+      const resetSubmit = () => {
+        isSubmitting = false;
+        submit.disabled = false;
+        if (submitLabel) submitLabel.textContent = ORIGINAL_LABEL;
+      };
+
+      const clearFieldErrors = () => {
+        form.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+      };
+
+      const open = () => {
+        if (isOpen) return;
+        isOpen = true;
+        if (autoOpenTimer) { clearTimeout(autoOpenTimer); autoOpenTimer = null; }
+        lastFocused = document.activeElement;
+        prevBodyOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden', 'false');
+        clearStatus();
+        clearFieldErrors();
+        resetSubmit();
+        // Move focus into the dialog after the transition starts
+        setTimeout(() => {
+          const first = form.querySelector('input, select, textarea');
+          if (first) first.focus({ preventScroll: true });
+        }, 220);
+      };
+
+      const close = () => {
+        if (!isOpen) return;
+        isOpen = false;
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = prevBodyOverflow || '';
+        if (lastFocused && typeof lastFocused.focus === 'function') {
+          try { lastFocused.focus({ preventScroll: true }); } catch (_) {}
+        }
+      };
+
+      // --- Open / close wiring ---
+      fab && fab.addEventListener('click', open);
+      closeBtn && closeBtn.addEventListener('click', close);
+
+      // Use pointerdown/pointerup so dragging text out of an input onto the
+      // backdrop doesn't close the dialog (a common modal UX bug).
+      overlay.addEventListener('pointerdown', (e) => {
+        pointerDownInsideCard = !!(e.target && card.contains(e.target));
+      });
+      overlay.addEventListener('pointerup', (e) => {
+        if (e.target === overlay && !pointerDownInsideCard) close();
+        pointerDownInsideCard = false;
+      });
+
+      // ESC + simple focus trap
+      document.addEventListener('keydown', (e) => {
+        if (!isOpen) return;
+        if (e.key === 'Escape') { e.preventDefault(); close(); return; }
+        if (e.key !== 'Tab') return;
+        const nodes = Array.from(card.querySelectorAll(FOCUSABLE_SEL))
+          .filter(n => n.offsetParent !== null || n === document.activeElement);
+        if (!nodes.length) return;
+        const first = nodes[0];
+        const last  = nodes[nodes.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault(); first.focus();
+        }
+      });
+
+      // Auto-open on every visit
+      autoOpenTimer = setTimeout(() => {
+        if (!isOpen) open();
+      }, AUTO_OPEN_DELAY_MS);
+
+      // --- Field-level validation hints ---
+      form.querySelectorAll('input, select').forEach(el => {
+        el.addEventListener('input',  () => el.classList.remove('is-invalid'));
+        el.addEventListener('change', () => el.classList.remove('is-invalid'));
+      });
+
+      // --- Submit ---
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (isSubmitting) return;
+        clearStatus();
+        clearFieldErrors();
+
+        const fName    = document.getElementById('sv-lp-name');
+        const fEmail   = document.getElementById('sv-lp-email');
+        const fPhone   = document.getElementById('sv-lp-phone');
+        const fCountry = document.getElementById('sv-lp-country');
+
+        const name    = fName.value.trim();
+        const email   = fEmail.value.trim();
+        const phone   = fPhone.value.trim();
+        const country = fCountry.value.trim();
+
+        const invalid = [];
+        if (!name)    invalid.push(fName);
+        if (!email || !EMAIL_RE.test(email)) invalid.push(fEmail);
+        if (!phone || phone.replace(/\D/g, '').length < 7) invalid.push(fPhone);
+        if (!country) invalid.push(fCountry);
+
+        if (invalid.length) {
+          invalid.forEach(el => el.classList.add('is-invalid'));
+          setStatus('err', invalid[0] === fEmail
+            ? 'Please enter a valid email address.'
+            : 'Please fill in all fields correctly.');
+          invalid[0].focus();
+          return;
+        }
+
+        isSubmitting = true;
+        submit.disabled = true;
+        if (submitLabel) submitLabel.innerHTML = '<span class="sv-lp-spinner" aria-hidden="true"></span> Sending...';
+
+        try {
+          const res = await fetch('/lead', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'fetch', 'Accept': 'application/json' },
+            body: JSON.stringify({ name, email, phone, country, source: 'popup' })
+          });
+          let data = null;
+          try { data = await res.json(); } catch (_) {}
+
+          if (res.ok && data && data.success) {
+            setStatus('ok', data.message || "Thanks! Our counsellor will reach out within 24 hours.");
+            form.reset();
+            if (submitLabel) submitLabel.textContent = 'Sent ✓';
+            setTimeout(() => { close(); resetSubmit(); }, 1800);
+          } else {
+            setStatus('err', (data && data.error) || 'Something went wrong. Please try again.');
+            resetSubmit();
+          }
+        } catch (err) {
+          setStatus('err', 'Network error. Please check your connection and try again.');
+          resetSubmit();
+        }
+      });
+    })();
+  </script>
+  <!-- ===== Lead Popup End ===== -->
+
   <!-- WhatsApp Float -->
   <a href="https://api.whatsapp.com/send/?phone=919042035522&text=Hi+Swift+Visa%2C+I+want+to+know+more+about+study+abroad+options&type=phone_number&app_absent=0"
     target="_blank" class="sv-whatsapp" title="Chat on WhatsApp">
@@ -1739,27 +2342,59 @@
     </svg>
   </a>
 
-  <!-- Contact Form Script -->
+  <!-- Contact Form Script (AJAX submit with graceful fallback) -->
   <script>
-    document.getElementById('sv-contact-form').addEventListener('submit', function (e) {
+    (function () {
+      const form = document.getElementById('sv-contact-form');
+      if (!form) return;
       const btn = document.getElementById('sv-submit');
+      const status = document.getElementById('sv-form-status');
+      const setStatus = (cls, text) => {
+        if (!status) return;
+        status.className = cls;
+        status.textContent = text;
+        status.style.display = 'block';
+      };
       const fields = ['sv-name', 'sv-email', 'sv-phone', 'sv-country', 'sv-query'];
-      const allFilled = fields.every(id => document.getElementById(id).value.trim());
-      if (!allFilled) {
-        e.preventDefault();
-        const status = document.getElementById('sv-form-status');
-        if (status) {
-          status.className = 'err';
-          status.textContent = 'Please fill in all required fields.';
-          status.style.display = 'block';
+
+      form.addEventListener('submit', async function (e) {
+        const allFilled = fields.every(id => {
+          const el = document.getElementById(id);
+          return el && el.value.trim();
+        });
+        if (!allFilled) {
+          e.preventDefault();
+          setStatus('err', 'Please fill in all required fields.');
+          return;
         }
-        return;
-      }
-      if (btn) {
-        btn.disabled = true;
-        btn.textContent = 'Sending...';
-      }
-    });
+        e.preventDefault();
+        const originalText = btn ? btn.textContent : '';
+        if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'X-Requested-With': 'fetch', 'Accept': 'application/json' }
+          });
+          let data = null;
+          try { data = await res.json(); } catch (_) {}
+          if (res.ok && data && data.success) {
+            setStatus('ok', data.message || "Thank you! We'll be in touch within 24 hours.");
+            form.reset();
+            if (btn) { btn.textContent = 'Sent!'; }
+            setTimeout(() => { if (btn) { btn.disabled = false; btn.textContent = originalText || 'Send Message'; } }, 2500);
+          } else {
+            const errText = (data && data.error) || 'Something went wrong. Please try again.';
+            setStatus('err', errText);
+            if (btn) { btn.disabled = false; btn.textContent = originalText || 'Send Message'; }
+          }
+        } catch (err) {
+          setStatus('err', 'Network error. Please check your connection and try again.');
+          if (btn) { btn.disabled = false; btn.textContent = originalText || 'Send Message'; }
+        }
+      });
+    })();
   </script>
 
   <script>
@@ -1822,6 +2457,18 @@
     /* Smooth hover lift on destination + service cards */
     document.querySelectorAll('.destination-card, .sv-service-card, .sv-team-card').forEach(card => {
       card.style.transition = 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
+    });
+
+    /* Lazy-load all non-hero images (hero stays eager for LCP) */
+    document.querySelectorAll('img').forEach(img => {
+      const src = img.getAttribute('src') || '';
+      if (src.includes('/hero.png')) {
+        img.setAttribute('loading', 'eager');
+        img.setAttribute('fetchpriority', 'high');
+      } else if (!img.hasAttribute('loading')) {
+        img.setAttribute('loading', 'lazy');
+        img.setAttribute('decoding', 'async');
+      }
     });
 
     /* Active nav link highlight on scroll */
